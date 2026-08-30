@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Viver Aqui: avaliações reais de condomínios feitas por moradores."
+  />
+  <title>Viver Aqui | Descubra como é morar antes de comprar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Página inicial do Viver Aqui">
+      <span class="brand-mark" aria-hidden="true">VA</span>
+      <span class="brand-name">
+        Viver <strong>Aqui</strong>
+      </span>
+    </a>
+
+    <button
+      class="mobile-menu-button"
+      id="mobileMenuButton"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mainNavigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-navigation" id="mainNavigation" aria-label="Navegação principal">
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+          Para quem procura
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m7 10 5 5 5-5" />
+          </svg>
+        </button>
+
+        <div class="dropdown-menu">
+          <a href="#">Buscar condomínio</a>
+          <a href="#">Comparar condomínios</a>
+          <a href="#">Guia para compradores</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+          Para condomínios
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m7 10 5 5 5-5" />
+          </svg>
+        </button>
+
+        <div class="dropdown-menu">
+          <a href="#">Cadastrar condomínio</a>
+          <a href="#">Responder avaliações</a>
+          <a href="#">Conhecer o plano profissional</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <button class="button button-outline" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10 17 15 12 10 7" />
+          <path d="M15 12H3" />
+          <path d="M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4" />
+        </svg>
+        Entrar
+      </button>
+
+      <button class="button button-primary" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 21a8 8 0 0 0-16 0" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        Criar conta
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Avaliações reais de quem mora</p>
+        <h1>
+          Antes de escolher um lar
+          <span>descubra como é viver lá.</span>
+        </h1>
+
+        <p class="hero-description">
+          Pesquise condomínios, veja notas dos moradores e conheça os pontos
+          positivos e negativos antes de comprar ou alugar.
+        </p>
+
+        <form class="search-box" id="searchForm" novalidate>
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+
+            <input
+              id="condoSearch"
+              name="condominio"
+              type="search"
+              autocomplete="off"
+              placeholder="Digite o nome ou endereço do condomínio"
+              aria-label="Pesquisar condomínio"
+              aria-controls="searchSuggestions"
+            />
+
+            <button class="search-button" type="submit" aria-label="Pesquisar">
+              Pesquisar
+            </button>
+          </div>
+
+          <div
+            class="search-suggestions"
+            id="searchSuggestions"
+            role="listbox"
+            aria-label="Sugestões de condomínios"
+          ></div>
+
+          <p class="search-feedback" id="searchFeedback" aria-live="polite"></p>
+        </form>
+
+        <div class="quick-actions">
+          <p class="quick-actions-title">O que você deseja fazer?</p>
+
+          <div class="quick-actions-grid">
+            <a class="action-card action-card-featured" href="#">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 15v4a1 1 0 0 0 1 1h4" />
+                  <path d="M14 5h5a1 1 0 0 1 1 1v5" />
+                  <path d="m7 17 10-10" />
+                  <path d="m14 7 3 3" />
+                </svg>
+              </span>
+              <span>
+                <strong>Avaliar condomínio</strong>
+                <small>Conte como é morar no local</small>
+              </span>
+            </a>
+
+            <a class="action-card" href="#">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 20V10" />
+                  <path d="M12 20V4" />
+                  <path d="M19 20v-7" />
+                </svg>
+              </span>
+              <span>
+                <strong>Comparar locais</strong>
+                <small>Veja notas lado a lado</small>
+              </span>
+            </a>
+
+            <a class="action-card" href="#">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m8 10 2 2 5-5" />
+                </svg>
+              </span>
+              <span>
+                <strong>Minhas avaliações</strong>
+                <small>Acompanhe seus relatos</small>
+              </span>
+            </a>
+
+            <a class="action-card" href="#">
+              <span class="action-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 3h12v18H6z" />
+                  <path d="M9 7h6" />
+                  <path d="M9 11h6" />
+                  <path d="M9 15h4" />
+                </svg>
+              </span>
+              <span>
+                <strong>Guia do comprador</strong>
+                <small>Saiba o que avaliar</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Imagem de um condomínio residencial">
+        <img
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85"
+          alt="Área externa de um condomínio residencial"
+        />
+
+        <div class="visual-overlay"></div>
+
+        <div class="rating-card">
+          <div class="rating-card-top">
+            <span class="rating-badge">4,7</span>
+            <span class="rating-stars" aria-label="Avaliação de 4,7 de 5">
+              ★★★★★
+            </span>
+          </div>
+
+          <strong>Residencial Parque das Flores</strong>
+          <p>Nota baseada em 184 avaliações de moradores.</p>
+
+          <div class="rating-meta">
+            <span>✓ Segurança bem avaliada</span>
+            <span>✓ Boa administração</span>
+          </div>
+        </div>
+
+        <div class="verified-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 12 2 2 4-5" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+          </svg>
+          <span>
+            <strong>Avaliações verificadas</strong>
+            <small>Mais confiança na sua decisão</small>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
