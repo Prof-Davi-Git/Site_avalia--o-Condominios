@@ -3,8 +3,6 @@ const mainNavigation = document.querySelector("#mainNavigation");
 const dropdowns = document.querySelectorAll(".nav-dropdown");
 const searchForm = document.querySelector("#searchForm");
 const searchInput = document.querySelector("#condoSearch");
-const suggestionsBox = document.querySelector("#searchSuggestions");
-const searchFeedback = document.querySelector("#searchFeedback");
 const sharedToast = document.querySelector("#toast");
 const heroVisual = document.querySelector("#heroVisual");
 const condoBrowser = document.querySelector("#condoBrowser");
@@ -67,15 +65,6 @@ function buildArrowIcon() {
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5 12h14"></path>
       <path d="m13 6 6 6-6 6"></path>
-    </svg>
-  `;
-}
-
-function buildPinIcon() {
-  return `
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
-      <circle cx="12" cy="10" r="2.5"></circle>
     </svg>
   `;
 }
@@ -145,57 +134,6 @@ function deactivateSearchMode() {
   searchModeActive = false;
   heroVisual.classList.remove("is-search-mode");
   condoBrowser.setAttribute("aria-hidden", "true");
-  closeSuggestions();
-}
-
-function closeSuggestions() {
-  if (!suggestionsBox) return;
-
-  suggestionsBox.classList.remove("is-visible");
-  suggestionsBox.innerHTML = "";
-}
-
-function renderSuggestions(query = "") {
-  if (!suggestionsBox) return;
-
-  const matches = getMatches(query);
-
-  if (matches.length === 0) {
-    suggestionsBox.innerHTML = `
-      <div class="suggestion-item" role="option" aria-disabled="true">
-        <span class="suggestion-pin">
-          ${buildPinIcon()}
-        </span>
-        <span class="suggestion-copy">
-          <strong>Nenhum condomínio encontrado</strong>
-          <small>Novos condomínios serão adicionados conforme a plataforma crescer.</small>
-        </span>
-      </div>
-    `;
-  } else {
-    suggestionsBox.innerHTML = matches
-      .map(
-        (condominio) => `
-          <button
-            class="suggestion-item"
-            type="button"
-            role="option"
-            data-condominio-url="${condominio.url}"
-          >
-            <span class="suggestion-pin">
-              ${buildPinIcon()}
-            </span>
-            <span class="suggestion-copy">
-              <strong>${condominio.nome}</strong>
-              <small>${condominio.endereco} · ${condominio.nota} / 5</small>
-            </span>
-          </button>
-        `
-      )
-      .join("");
-  }
-
-  suggestionsBox.classList.add("is-visible");
 }
 
 function focusSearch() {
@@ -206,7 +144,6 @@ function focusSearch() {
   window.setTimeout(() => {
     searchInput.focus();
     activateSearchMode();
-    renderSuggestions(searchInput.value);
   }, 260);
 }
 
@@ -262,32 +199,16 @@ searchActionLinks.forEach((link) => {
 
 if (searchInput) {
   searchInput.addEventListener("focus", () => {
-    if (searchFeedback) searchFeedback.textContent = "";
     activateSearchMode();
-    renderSuggestions(searchInput.value);
   });
 
   searchInput.addEventListener("click", () => {
     activateSearchMode();
-    renderSuggestions(searchInput.value);
   });
 
   searchInput.addEventListener("input", (event) => {
-    if (searchFeedback) searchFeedback.textContent = "";
-
     activateSearchMode();
-    renderSuggestions(event.target.value);
     renderCondoBrowser(event.target.value);
-  });
-}
-
-if (suggestionsBox) {
-  suggestionsBox.addEventListener("click", (event) => {
-    const selectedItem = event.target.closest("[data-condominio-url]");
-
-    if (!selectedItem) return;
-
-    window.location.href = selectedItem.dataset.condominioUrl;
   });
 }
 
@@ -310,12 +231,6 @@ if (searchForm && searchInput) {
     activateSearchMode();
 
     if (!query) {
-      if (searchFeedback) {
-        searchFeedback.textContent =
-          "Selecione um dos condomínios disponíveis ou digite um nome para pesquisar.";
-      }
-
-      renderSuggestions("");
       renderCondoBrowser("");
       searchInput.focus();
       return;
@@ -328,12 +243,6 @@ if (searchForm && searchInput) {
       return;
     }
 
-    if (matches.length === 0 && searchFeedback) {
-      searchFeedback.textContent =
-        "Ainda não encontramos esse condomínio entre os perfis cadastrados.";
-    }
-
-    renderSuggestions(query);
     renderCondoBrowser(query);
   });
 }
