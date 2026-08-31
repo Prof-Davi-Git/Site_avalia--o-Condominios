@@ -17,6 +17,7 @@
   />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home-search.css" />
 </head>
 
 <body>
@@ -51,7 +52,7 @@
         </button>
 
         <div class="dropdown-menu">
-          <a href="#searchForm">Buscar condomínio</a>
+          <a href="#searchForm" data-search-action="true">Buscar condomínio</a>
           <a href="#">Comparar condomínios</a>
           <a href="#">Guia para compradores</a>
         </div>
@@ -121,7 +122,7 @@
               autocomplete="off"
               placeholder="Digite o nome ou endereço do condomínio"
               aria-label="Pesquisar condomínio"
-              aria-controls="searchSuggestions"
+              aria-controls="searchSuggestions condoBrowserList"
             />
 
             <button class="search-button" type="submit" aria-label="Pesquisar">
@@ -143,7 +144,12 @@
           <p class="quick-actions-title">O que você deseja fazer?</p>
 
           <div class="quick-actions-grid">
-            <a class="action-card action-card-featured" href="condominio.html#avaliar">
+            <a
+              class="action-card"
+              id="evaluateCondoAction"
+              href="#searchForm"
+              data-search-action="true"
+            >
               <span class="action-icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 15v4a1 1 0 0 0 1 1h4" />
@@ -154,7 +160,7 @@
               </span>
               <span>
                 <strong>Avaliar condomínio</strong>
-                <small>Conte como é morar no local</small>
+                <small>Primeiro, encontre o condomínio desejado</small>
               </span>
             </a>
 
@@ -203,7 +209,7 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Imagem de um condomínio residencial">
+      <div class="hero-visual" id="heroVisual" aria-label="Destaque de condomínio e resultados da pesquisa">
         <img
           src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85"
           alt="Área externa de um condomínio residencial"
@@ -238,6 +244,24 @@
             <small>Mais confiança na sua decisão</small>
           </span>
         </div>
+
+        <section class="condo-browser" id="condoBrowser" aria-hidden="true" aria-label="Condomínios cadastrados">
+          <div class="condo-browser-header">
+            <div>
+              <span class="condo-browser-kicker">Condomínios disponíveis</span>
+              <h2>Escolha um perfil para consultar</h2>
+            </div>
+            <p>
+              Os resultados exibidos aqui acompanham sua pesquisa e permitem acessar diretamente o perfil do condomínio.
+            </p>
+          </div>
+
+          <div class="condo-browser-list" id="condoBrowserList"></div>
+
+          <p class="condo-browser-footer">
+            Novos condomínios aparecerão automaticamente nesta área conforme forem cadastrados na plataforma.
+          </p>
+        </section>
       </div>
     </section>
   </main>
