@@ -1,0 +1,286 @@
+.hero-visual > img,
+.hero-visual .visual-overlay,
+.hero-visual .rating-card,
+.hero-visual .verified-card {
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.condo-browser {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background:
+    radial-gradient(circle at 90% 8%, rgba(146, 200, 62, 0.11), transparent 26%),
+    linear-gradient(145deg, #f8fbfa 0%, #eef6f3 100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    visibility 220ms ease;
+}
+
+.hero-visual.is-search-mode > img,
+.hero-visual.is-search-mode .visual-overlay,
+.hero-visual.is-search-mode .rating-card,
+.hero-visual.is-search-mode .verified-card {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.985);
+}
+
+.hero-visual.is-search-mode .condo-browser {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.condo-browser-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.condo-browser-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.condo-browser-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.condo-browser-header p {
+  max-width: 300px;
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.condo-browser-list {
+  display: grid;
+  gap: 12px;
+  overflow-y: auto;
+  padding: 2px 4px 4px 2px;
+  scrollbar-width: thin;
+  scrollbar-color: #bfd0ca transparent;
+}
+
+.condo-browser-card {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #d9e5e1;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(16, 35, 63, 0.07);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.condo-browser-card:hover,
+.condo-browser-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: #9fc0b5;
+  box-shadow: 0 16px 34px rgba(16, 35, 63, 0.11);
+  outline: none;
+}
+
+.condo-browser-thumb {
+  overflow: hidden;
+  width: 130px;
+  height: 92px;
+  border-radius: 13px;
+  background: #dce8e4;
+}
+
+.condo-browser-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.condo-browser-card:hover .condo-browser-thumb img,
+.condo-browser-card:focus-visible .condo-browser-thumb img {
+  transform: scale(1.035);
+}
+
+.condo-browser-copy {
+  min-width: 0;
+}
+
+.condo-browser-copy strong {
+  display: block;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.condo-browser-address {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.condo-browser-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.condo-browser-score {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 0 9px;
+  border-radius: 9px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.condo-browser-reviews {
+  color: #6c7989;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.condo-browser-arrow {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.condo-browser-card:hover .condo-browser-arrow,
+.condo-browser-card:focus-visible .condo-browser-arrow {
+  background: var(--primary);
+  color: #fff;
+}
+
+.condo-browser-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.condo-browser-empty {
+  display: grid;
+  min-height: 190px;
+  place-items: center;
+  padding: 28px;
+  border: 1px dashed #bdcec8;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  text-align: center;
+}
+
+.condo-browser-empty strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 15px;
+}
+
+.condo-browser-empty p {
+  max-width: 390px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.condo-browser-footer {
+  margin: auto 0 0;
+  padding-top: 18px;
+  color: #718092;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.action-card[data-search-action="true"] {
+  cursor: pointer;
+}
+
+@media (max-width: 980px) {
+  .condo-browser {
+    padding: 24px;
+  }
+
+  .condo-browser-header {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .condo-browser {
+    padding: 18px;
+  }
+
+  .condo-browser-header {
+    display: block;
+  }
+
+  .condo-browser-header p {
+    margin-top: 9px;
+  }
+
+  .condo-browser-card {
+    grid-template-columns: 84px minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .condo-browser-thumb {
+    width: 84px;
+    height: 78px;
+  }
+
+  .condo-browser-copy strong {
+    white-space: normal;
+  }
+
+  .condo-browser-arrow {
+    width: 34px;
+    height: 34px;
+  }
+}
