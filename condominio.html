@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Perfil do Residencial Parque das Flores no Viver Aqui." />
+  <title>Residencial Parque das Flores | Viver Aqui</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="condominio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Página inicial do Viver Aqui">
+      <span class="brand-mark" aria-hidden="true">VA</span>
+      <span class="brand-name">Viver <strong>Aqui</strong></span>
+    </a>
+
+    <button
+      class="mobile-menu-button"
+      id="mobileMenuButton"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mainNavigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-navigation" id="mainNavigation" aria-label="Navegação principal">
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+          Para quem procura
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="index.html#searchForm">Buscar condomínio</a>
+          <a href="#">Comparar condomínios</a>
+          <a href="#">Guia para compradores</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+          Para condomínios
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#responsavel">Cadastrar condomínio</a>
+          <a href="#avaliacoes">Responder avaliações</a>
+          <a href="#responsavel">Conhecer o perfil profissional</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <button class="button button-outline" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10 17 15 12 10 7" />
+          <path d="M15 12H3" />
+          <path d="M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4" />
+        </svg>
+        Entrar
+      </button>
+      <button class="button button-primary" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 21a8 8 0 0 0-16 0" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        Criar conta
+      </button>
+    </div>
+  </header>
+
+  <main class="profile-page">
+    <div class="profile-shell">
+      <a class="back-link" href="index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+        Voltar para a pesquisa
+      </a>
+
+      <section class="profile-hero" aria-labelledby="condominioTitle">
+        <div class="profile-summary">
+          <div class="profile-labels">
+            <span class="status-chip status-chip-verified">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 12 2 2 4-5" />
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+              </svg>
+              Condomínio verificado
+            </span>
+            <span class="status-chip">Perfil de demonstração</span>
+          </div>
+
+          <h1 class="profile-title" id="condominioTitle">Residencial Parque das Flores</h1>
+
+          <p class="profile-address">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            São Paulo - SP
+          </p>
+
+          <div class="headline-metrics">
+            <div class="main-score" aria-label="Nota geral 4,7 de 5">
+              <strong>4,7</strong>
+              <span>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <small>184 avaliações</small>
+              </span>
+            </div>
+
+            <div class="recommendation">
+              <strong>92%</strong>
+              <span>dos moradores recomendariam morar aqui</span>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <a class="profile-button profile-button-primary" href="#avaliar">
+              Avaliar este condomínio
+            </a>
+            <button class="profile-button profile-button-secondary" id="saveCondoButton" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 4h12v17l-6-4-6 4z" />
+              </svg>
+              <span>Salvar condomínio</span>
+            </button>
+          </div>
+
+          <a class="owner-link" href="#responsavel">Sou responsável por este condomínio</a>
+        </div>
+
+        <div class="profile-gallery" aria-label="Galeria de imagens do condomínio">
+          <button class="gallery-photo gallery-photo-main" type="button" data-gallery-index="0" aria-label="Abrir foto principal">
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85" alt="Fachada residencial com área externa" />
+          </button>
+          <button class="gallery-photo" type="button" data-gallery-index="1" aria-label="Abrir segunda foto">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Área comum de empreendimento residencial" />
+          </button>
+          <button class="gallery-photo" type="button" data-gallery-index="2" aria-label="Abrir terceira foto">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Área externa de empreendimento residencial" />
+          </button>
+          <button class="gallery-count" id="openGalleryButton" type="button">
+            Ver todas as fotos
+          </button>
+        </div>
+      </section>
+
+      <nav class="profile-tabs" aria-label="Seções do condomínio">
+        <a class="profile-tab is-active" href="#visao-geral">Visão geral</a>
+        <a class="profile-tab" href="#avaliacoes">Avaliações</a>
+        <a class="profile-tab" href="#estrutura">Estrutura</a>
+        <a class="profile-tab" href="#fotos">Fotos</a>
+        <a class="profile-tab" href="#localizacao">Localização</a>
+      </nav>
+
+      <section class="profile-section" id="visao-geral">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Experiência dos moradores</span>
+            <h2>Notas por categoria</h2>
+          </div>
+          <p>A nota geral combina diferentes aspectos da rotina no condomínio.</p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="score-panel">
+            <div class="score-row">
+              <div class="score-copy"><span>Segurança</span><strong>4,8</strong></div>
+              <div class="score-track"><span style="width: 96%"></span></div>
+            </div>
+            <div class="score-row">
+              <div class="score-copy"><span>Localização</span><strong>4,9</strong></div>
+              <div class="score-track"><span style="width: 98%"></span></div>
+            </div>
+            <div class="score-row">
+              <div class="score-copy"><span>Estrutura e áreas comuns</span><strong>4,8</strong></div>
+              <div class="score-track"><span style="width: 96%"></span></div>
+            </div>
+            <div class="score-row">
+              <div class="score-copy"><span>Limpeza e conservação</span><strong>4,7</strong></div>
+              <div class="score-track"><span style="width: 94%"></span></div>
+            </div>
+            <div class="score-row">
+              <div class="score-copy"><span>Administração</span><strong>4,6</strong></div>
+              <div class="score-track"><span style="width: 92%"></span></div>
+            </div>
+            <div class="score-row">
+              <div class="score-copy"><span>Silêncio e barulho</span><strong>4,3</strong></div>
+              <div class="score-track"><span style="width: 86%"></span></div>
+            </div>
+            <div class="score-row">
+              <div class="score-copy"><span>Custo-benefício</span><strong>4,5</strong></div>
+              <div class="score-track"><span style="width: 90%"></span></div>
+            </div>
+          </article>
+
+          <article class="perception-panel">
+            <div class="perception-block">
+              <span class="perception-title">Pontos mais elogiados</span>
+              <ul class="perception-list perception-list-positive">
+                <li>Segurança e controle de acesso</li>
+                <li>Localização e serviços próximos</li>
+                <li>Conservação das áreas comuns</li>
+                <li>Estrutura para famílias</li>
+              </ul>
+            </div>
+            <div class="perception-block">
+              <span class="perception-title">Pontos que merecem atenção</span>
+              <ul class="perception-list perception-list-attention">
+                <li>Barulho nas áreas de lazer aos finais de semana</li>
+                <li>Valor da taxa condominial</li>
+                <li>Prazo de algumas manutenções internas</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="profile-section" id="avaliacoes">
+        <div class="section-heading section-heading-inline">
+          <div>
+            <span class="section-kicker">Relatos de quem vive no local</span>
+            <h2>Avaliações dos moradores</h2>
+          </div>
+          <div class="review-toolbar" aria-label="Filtros de avaliações">
+            <button class="review-filter is-active" type="button" data-review-filter="all">Todas</button>
+            <button class="review-filter" type="button" data-review-filter="5">5 estrelas</button>
+            <button class="review-filter" type="button" data-review-filter="4">4 estrelas</button>
+          </div>
+        </div>
+
+        <div class="reviews-list" id="reviewsList">
+          <article class="review-card" data-review-rating="5">
+            <div class="review-topline">
+              <div>
+                <span class="review-score">4,8</span>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+              </div>
+              <time datetime="2026-08-18">18 ago. 2026</time>
+            </div>
+            <h3>Boa estrutura e rotina tranquila</h3>
+            <p>
+              Moro no condomínio há três anos. A segurança e a conservação das áreas comuns são os principais pontos positivos. A piscina costuma ficar movimentada aos finais de semana, mas a experiência geral é muito boa.
+            </p>
+            <div class="review-meta">
+              <span class="verified-resident">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-5" /><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
+                Morador verificado
+              </span>
+              <span>Morador atual</span>
+              <span>Reside há 3 anos</span>
+            </div>
+            <button class="helpful-button" type="button" data-helpful-count="18">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10h4Z" /><path d="M7 19h10.5a2 2 0 0 0 1.9-1.4l1.4-4.5A2 2 0 0 0 18.9 10H14l.7-3.2A2.5 2.5 0 0 0 12.3 4L7 10Z" /></svg>
+              Útil <span>18</span>
+            </button>
+          </article>
+
+          <article class="review-card" data-review-rating="5">
+            <div class="review-topline">
+              <div>
+                <span class="review-score">4,6</span>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+              </div>
+              <time datetime="2026-08-07">07 ago. 2026</time>
+            </div>
+            <h3>Segurança é o principal ponto forte</h3>
+            <p>
+              O controle de acesso funciona bem e a equipe da portaria é atenciosa. A localização também ajuda bastante no dia a dia. A taxa condominial poderia ser mais competitiva, mas os serviços entregues são consistentes.
+            </p>
+            <div class="review-meta">
+              <span class="verified-resident">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-5" /><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
+                Morador verificado
+              </span>
+              <span>Morador atual</span>
+              <span>Reside há 1 ano</span>
+            </div>
+            <button class="helpful-button" type="button" data-helpful-count="11">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10h4Z" /><path d="M7 19h10.5a2 2 0 0 0 1.9-1.4l1.4-4.5A2 2 0 0 0 18.9 10H14l.7-3.2A2.5 2.5 0 0 0 12.3 4L7 10Z" /></svg>
+              Útil <span>11</span>
+            </button>
+          </article>
+
+          <article class="review-card" data-review-rating="4">
+            <div class="review-topline">
+              <div>
+                <span class="review-score">4,2</span>
+                <span class="stars" aria-hidden="true">★★★★☆</span>
+              </div>
+              <time datetime="2026-07-29">29 jul. 2026</time>
+            </div>
+            <h3>Boa experiência, com alguns pontos de melhoria</h3>
+            <p>
+              A estrutura atende bem e a limpeza é frequente. Em horários de maior movimento, alguns elevadores podem ficar sobrecarregados e já tivemos manutenção mais demorada do que o esperado.
+            </p>
+            <div class="review-meta">
+              <span class="verified-resident">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-5" /><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
+                Morador verificado
+              </span>
+              <span>Morador atual</span>
+              <span>Reside há 5 anos</span>
+            </div>
+
+            <div class="official-response">
+              <div class="official-response-header">
+                <span>Resposta do condomínio</span>
+                <span class="official-badge">Perfil oficial</span>
+              </div>
+              <p>
+                A administração iniciou uma revisão preventiva dos elevadores e ajustou o cronograma de manutenção para reduzir o tempo de indisponibilidade dos equipamentos.
+              </p>
+            </div>
+
+            <button class="helpful-button" type="button" data-helpful-count="9">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10h4Z" /><path d="M7 19h10.5a2 2 0 0 0 1.9-1.4l1.4-4.5A2 2 0 0 0 18.9 10H14l.7-3.2A2.5 2.5 0 0 0 12.3 4L7 10Z" /></svg>
+              Útil <span>9</span>
+            </button>
+          </article>
+        </div>
+
+        <button class="load-more-button" type="button" id="loadMoreReviews">Carregar mais avaliações</button>
+      </section>
+
+      <section class="profile-section" id="estrutura">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Informações do empreendimento</span>
+            <h2>Estrutura e comodidades</h2>
+          </div>
+          <p>Dados demonstrativos para validar a organização do perfil.</p>
+        </div>
+
+        <div class="facts-grid">
+          <article class="fact-card"><span>Torres</span><strong>4</strong></article>
+          <article class="fact-card"><span>Unidades</span><strong>320</strong></article>
+          <article class="fact-card"><span>Portaria</span><strong>24 horas</strong></article>
+          <article class="fact-card"><span>Perfil</span><strong>Residencial</strong></article>
+        </div>
+
+        <div class="amenities-card">
+          <h3>Comodidades informadas</h3>
+          <div class="amenities-grid">
+            <span>Academia</span>
+            <span>Piscina</span>
+            <span>Salão de festas</span>
+            <span>Playground</span>
+            <span>Quadra esportiva</span>
+            <span>Churrasqueira</span>
+            <span>Bicicletário</span>
+            <span>Espaço para animais</span>
+            <span>Elevadores</span>
+            <span>Controle de acesso</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-section" id="fotos">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Imagens do local</span>
+            <h2>Galeria de fotos</h2>
+          </div>
+          <p>Em uma próxima etapa, fotos oficiais e fotos enviadas por moradores poderão ser identificadas separadamente.</p>
+        </div>
+
+        <div class="full-gallery">
+          <button type="button" data-gallery-index="0"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1000&q=85" alt="Fachada residencial" /></button>
+          <button type="button" data-gallery-index="1"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85" alt="Área comum residencial" /></button>
+          <button type="button" data-gallery-index="2"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" alt="Área externa residencial" /></button>
+        </div>
+      </section>
+
+      <section class="profile-section" id="localizacao">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Entorno e acesso</span>
+            <h2>Localização</h2>
+          </div>
+          <p>A integração com mapas e serviços próximos será conectada em uma etapa futura.</p>
+        </div>
+
+        <div class="location-card">
+          <div class="location-copy">
+            <span class="location-label">Endereço demonstrativo</span>
+            <strong>São Paulo - SP</strong>
+            <p>A localização exata será exibida após o cadastro oficial do condomínio.</p>
+          </div>
+          <div class="map-placeholder" aria-label="Espaço reservado para integração com mapa">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            <span>Mapa será exibido aqui</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="review-cta" id="avaliar">
+        <div>
+          <span class="section-kicker">Compartilhe sua experiência</span>
+          <h2>Você mora ou já morou neste condomínio?</h2>
+          <p>Sua avaliação pode ajudar outras pessoas a tomar uma decisão mais informada antes de comprar ou alugar.</p>
+        </div>
+        <button class="profile-button profile-button-primary" id="startReviewButton" type="button">Começar avaliação</button>
+      </section>
+
+      <section class="owner-cta" id="responsavel">
+        <div>
+          <span class="owner-cta-label">Área institucional</span>
+          <h2>Representa o Residencial Parque das Flores?</h2>
+          <p>Solicite a gestão do perfil para cadastrar informações oficiais, publicar fotos e responder avaliações dos moradores.</p>
+        </div>
+        <button class="profile-button profile-button-secondary" id="claimProfileButton" type="button">Solicitar gestão do perfil</button>
+      </section>
+
+      <p class="demo-disclaimer">
+        Este perfil utiliza dados e relatos simulados exclusivamente para demonstrar o funcionamento do protótipo Viver Aqui.
+      </p>
+    </div>
+  </main>
+
+  <div class="gallery-modal" id="galleryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galeria de fotos">
+    <button class="gallery-modal-close" id="galleryModalClose" type="button" aria-label="Fechar galeria">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+    </button>
+    <button class="gallery-modal-nav gallery-modal-prev" id="galleryPrev" type="button" aria-label="Foto anterior">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+    </button>
+    <img id="galleryModalImage" src="" alt="Imagem ampliada do condomínio" />
+    <button class="gallery-modal-nav gallery-modal-next" id="galleryNext" type="button" aria-label="Próxima foto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+    </button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="condominio.js"></script>
+</body>
+</html>
