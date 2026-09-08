@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="home-search.css" />
+  <link rel="stylesheet" href="home-layout.css" />
 </head>
 
 <body>
@@ -98,6 +99,61 @@
 
   <main>
     <section class="hero">
+      <div class="hero-visual" id="heroVisual" aria-label="Destaque de condomínio e resultados da pesquisa">
+        <img
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85"
+          alt="Área externa de um condomínio residencial"
+        />
+
+        <div class="visual-overlay"></div>
+
+        <a class="rating-card" href="condominio.html" aria-label="Abrir perfil do Residencial Parque das Flores">
+          <div class="rating-card-top">
+            <span class="rating-badge">4,7</span>
+            <span class="rating-stars" aria-label="Avaliação de 4,7 de 5">
+              ★★★★★
+            </span>
+          </div>
+
+          <strong>Residencial Parque das Flores</strong>
+          <p>Nota baseada em 184 avaliações de moradores.</p>
+
+          <div class="rating-meta">
+            <span>Segurança bem avaliada</span>
+            <span>Boa administração</span>
+          </div>
+        </a>
+
+        <div class="verified-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 12 2 2 4-5" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+          </svg>
+          <span>
+            <strong>Avaliações verificadas</strong>
+            <small>Mais confiança na sua decisão</small>
+          </span>
+        </div>
+
+        <section class="condo-browser" id="condoBrowser" aria-hidden="true" aria-label="Condomínios cadastrados">
+          <div class="condo-browser-header">
+            <div>
+              <span class="condo-browser-kicker">Condomínios disponíveis</span>
+              <h2>Escolha um perfil para consultar</h2>
+            </div>
+            <p>
+              Os resultados exibidos aqui acompanham sua pesquisa e permitem acessar diretamente o perfil do condomínio.
+            </p>
+          </div>
+
+          <div class="condo-browser-list" id="condoBrowserList"></div>
+
+          <p class="condo-browser-footer">
+            Novos condomínios aparecerão automaticamente nesta área conforme forem cadastrados na plataforma.
+          </p>
+        </section>
+      </div>
+
       <div class="hero-content">
         <p class="eyebrow">Avaliações reais de quem mora</p>
         <h1>
@@ -109,29 +165,6 @@
           Pesquise condomínios, veja notas dos moradores e conheça os pontos
           positivos e negativos antes de comprar ou alugar.
         </p>
-
-        <form class="search-box" id="searchForm" novalidate>
-          <div class="search-field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="7" />
-              <path d="m20 20-3.5-3.5" />
-            </svg>
-
-            <input
-              id="condoSearch"
-              name="condominio"
-              type="search"
-              autocomplete="off"
-              placeholder="Digite o nome ou endereço do condomínio"
-              aria-label="Pesquisar condomínio"
-              aria-controls="condoBrowserList"
-            />
-
-            <button class="search-button" type="submit" aria-label="Pesquisar">
-              Pesquisar
-            </button>
-          </div>
-        </form>
 
         <div class="quick-actions">
           <p class="quick-actions-title">O que você deseja fazer?</p>
@@ -200,61 +233,29 @@
             </a>
           </div>
         </div>
-      </div>
 
-      <div class="hero-visual" id="heroVisual" aria-label="Destaque de condomínio e resultados da pesquisa">
-        <img
-          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85"
-          alt="Área externa de um condomínio residencial"
-        />
+        <form class="search-box" id="searchForm" novalidate>
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
 
-        <div class="visual-overlay"></div>
+            <input
+              id="condoSearch"
+              name="condominio"
+              type="search"
+              autocomplete="off"
+              placeholder="Digite o nome ou endereço do condomínio"
+              aria-label="Pesquisar condomínio"
+              aria-controls="condoBrowserList"
+            />
 
-        <a class="rating-card" href="condominio.html" aria-label="Abrir perfil do Residencial Parque das Flores">
-          <div class="rating-card-top">
-            <span class="rating-badge">4,7</span>
-            <span class="rating-stars" aria-label="Avaliação de 4,7 de 5">
-              ★★★★★
-            </span>
+            <button class="search-button" type="submit" aria-label="Pesquisar">
+              Pesquisar
+            </button>
           </div>
-
-          <strong>Residencial Parque das Flores</strong>
-          <p>Nota baseada em 184 avaliações de moradores.</p>
-
-          <div class="rating-meta">
-            <span>Segurança bem avaliada</span>
-            <span>Boa administração</span>
-          </div>
-        </a>
-
-        <div class="verified-card">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m9 12 2 2 4-5" />
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
-          </svg>
-          <span>
-            <strong>Avaliações verificadas</strong>
-            <small>Mais confiança na sua decisão</small>
-          </span>
-        </div>
-
-        <section class="condo-browser" id="condoBrowser" aria-hidden="true" aria-label="Condomínios cadastrados">
-          <div class="condo-browser-header">
-            <div>
-              <span class="condo-browser-kicker">Condomínios disponíveis</span>
-              <h2>Escolha um perfil para consultar</h2>
-            </div>
-            <p>
-              Os resultados exibidos aqui acompanham sua pesquisa e permitem acessar diretamente o perfil do condomínio.
-            </p>
-          </div>
-
-          <div class="condo-browser-list" id="condoBrowserList"></div>
-
-          <p class="condo-browser-footer">
-            Novos condomínios aparecerão automaticamente nesta área conforme forem cadastrados na plataforma.
-          </p>
-        </section>
+        </form>
       </div>
     </section>
   </main>
