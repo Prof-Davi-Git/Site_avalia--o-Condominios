@@ -1,0 +1,41 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  min-width: 118px;
+  line-height: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 62px;
+  max-width: 138px;
+  object-fit: contain;
+}
+
+@media (min-width: 981px) and (max-height: 850px) {
+  .brand-logo {
+    height: 56px;
+    max-width: 126px;
+  }
+}
+
+@media (max-width: 980px) {
+  .brand-logo {
+    height: 56px;
+    max-width: 126px;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand {
+    min-width: 104px;
+  }
+
+  .brand-logo {
+    height: 50px;
+    max-width: 114px;
+  }
+}
