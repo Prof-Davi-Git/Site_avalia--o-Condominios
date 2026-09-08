@@ -166,6 +166,29 @@
           positivos e negativos antes de comprar ou alugar.
         </p>
 
+        <form class="search-box" id="searchForm" novalidate>
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+
+            <input
+              id="condoSearch"
+              name="condominio"
+              type="search"
+              autocomplete="off"
+              placeholder="Digite o nome ou endereço do condomínio"
+              aria-label="Pesquisar condomínio"
+              aria-controls="condoBrowserList"
+            />
+
+            <button class="search-button" type="submit" aria-label="Pesquisar">
+              Pesquisar
+            </button>
+          </div>
+        </form>
+
         <div class="quick-actions">
           <p class="quick-actions-title">O que você deseja fazer?</p>
 
@@ -233,29 +256,6 @@
             </a>
           </div>
         </div>
-
-        <form class="search-box" id="searchForm" novalidate>
-          <div class="search-field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="7" />
-              <path d="m20 20-3.5-3.5" />
-            </svg>
-
-            <input
-              id="condoSearch"
-              name="condominio"
-              type="search"
-              autocomplete="off"
-              placeholder="Digite o nome ou endereço do condomínio"
-              aria-label="Pesquisar condomínio"
-              aria-controls="condoBrowserList"
-            />
-
-            <button class="search-button" type="submit" aria-label="Pesquisar">
-              Pesquisar
-            </button>
-          </div>
-        </form>
       </div>
     </section>
   </main>
