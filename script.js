@@ -1,3 +1,132 @@
+function applyCasaCertaBrand() {
+  const oldBrandName = "Viver Aqui";
+  const newBrandName = "Casa Certa";
+
+  if (document.title.includes(oldBrandName)) {
+    document.title = document.title.replaceAll(oldBrandName, newBrandName);
+  }
+
+  document.querySelectorAll('meta[name="description"]').forEach((meta) => {
+    const content = meta.getAttribute("content") || "";
+    if (content.includes(oldBrandName)) {
+      meta.setAttribute("content", content.replaceAll(oldBrandName, newBrandName));
+    }
+  });
+
+  const brand = document.querySelector(".brand");
+
+  if (brand) {
+    brand.setAttribute("aria-label", "Página inicial da Casa Certa");
+    brand.innerHTML = `
+      <img
+        class="brand-logo"
+        src="Imagens/casa-certa-logo.png"
+        alt="Casa Certa"
+      />
+    `;
+  }
+
+  const textWalker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT
+  );
+
+  let currentNode = textWalker.nextNode();
+
+  while (currentNode) {
+    if (currentNode.nodeValue?.includes(oldBrandName)) {
+      currentNode.nodeValue = currentNode.nodeValue.replaceAll(
+        oldBrandName,
+        newBrandName
+      );
+    }
+
+    currentNode = textWalker.nextNode();
+  }
+
+  if (!document.querySelector("#casaCertaBrandStyles")) {
+    const brandStyles = document.createElement("style");
+    brandStyles.id = "casaCertaBrandStyles";
+    brandStyles.textContent = `
+      .site-header {
+        min-height: 92px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: 142px;
+        min-height: 84px;
+      }
+
+      .brand-logo {
+        display: block;
+        width: 142px;
+        height: auto;
+        max-height: 88px;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      .hero {
+        min-height: calc(100svh - 92px);
+      }
+
+      @media (min-width: 981px) and (max-height: 850px) {
+        .site-header {
+          min-height: 82px;
+        }
+
+        .brand {
+          min-width: 122px;
+          min-height: 76px;
+        }
+
+        .brand-logo {
+          width: 122px;
+          max-height: 76px;
+        }
+
+        .hero {
+          min-height: calc(100svh - 82px);
+        }
+      }
+
+      @media (max-width: 980px) {
+        .site-header {
+          min-height: 80px;
+        }
+
+        .brand {
+          min-width: 116px;
+          min-height: 72px;
+        }
+
+        .brand-logo {
+          width: 116px;
+          max-height: 72px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .brand {
+          min-width: 104px;
+        }
+
+        .brand-logo {
+          width: 104px;
+          max-height: 66px;
+        }
+      }
+    `;
+
+    document.head.appendChild(brandStyles);
+  }
+}
+
+applyCasaCertaBrand();
+
 const mobileMenuButton = document.querySelector("#mobileMenuButton");
 const mainNavigation = document.querySelector("#mainNavigation");
 const dropdowns = document.querySelectorAll(".nav-dropdown");
