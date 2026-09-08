@@ -1,7 +1,7 @@
 /*
   Organização exclusiva da página inicial da Casa Certa.
-  Mantém os mesmos elementos e funcionalidades, mas usa uma composição
-  diferente: destaque visual à esquerda e jornada do usuário à direita.
+  Mantém o destaque visual à esquerda e concentra a ação principal
+  da página na pesquisa de condomínios.
 */
 
 @media (min-width: 981px) {
@@ -24,23 +24,40 @@
     justify-self: end;
   }
 
-  .quick-actions {
+  .search-box {
     margin-top: 24px;
   }
+}
 
-  .quick-actions-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
+.compare-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    color 160ms ease,
+    gap 160ms ease;
+}
 
-  .action-card {
-    min-height: 112px;
-    padding: 15px;
-  }
+.compare-link svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 160ms ease;
+}
 
-  .search-box {
-    margin-top: 22px;
-  }
+.compare-link:hover,
+.compare-link:focus-visible {
+  color: var(--primary-dark);
+  outline: none;
+  gap: 11px;
+}
+
+.compare-link:hover svg,
+.compare-link:focus-visible svg {
+  transform: translateX(2px);
 }
 
 @media (min-width: 981px) and (max-width: 1260px) {
@@ -55,21 +72,12 @@
 }
 
 @media (min-width: 981px) and (max-height: 850px) {
-  .quick-actions {
-    margin-top: 14px;
-  }
-
-  .quick-actions-grid {
-    gap: 10px;
-  }
-
-  .action-card {
-    min-height: 94px;
-    padding: 12px;
-  }
-
   .search-box {
-    margin-top: 14px;
+    margin-top: 16px;
+  }
+
+  .compare-link {
+    margin-top: 13px;
   }
 }
 
@@ -87,15 +95,5 @@
   .hero-visual {
     grid-column: 1;
     grid-row: 2;
-  }
-
-  .quick-actions-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .quick-actions-grid {
-    grid-template-columns: 1fr;
   }
 }
