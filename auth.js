@@ -150,6 +150,18 @@ if (authPage === "cadastro") {
     radio.addEventListener("change", updateRepresentativeFields);
   });
 
+  const requestedType = new URLSearchParams(window.location.search).get("tipo");
+
+  if (requestedType === "representante") {
+    const representativeRadio = document.querySelector(
+      'input[name="accountType"][value="representante"]'
+    );
+
+    if (representativeRadio) {
+      representativeRadio.checked = true;
+    }
+  }
+
   updateRepresentativeFields();
 
   const updatePasswordStrength = () => {
