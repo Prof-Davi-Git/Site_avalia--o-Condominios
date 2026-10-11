@@ -110,11 +110,13 @@
 .auth-form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 18px;
 }
 
 .auth-field {
   display: grid;
+  align-content: start;
   gap: 8px;
   min-width: 0;
 }
@@ -124,6 +126,7 @@
   color: var(--text);
   font-size: 13px;
   font-weight: 700;
+  line-height: 1.35;
 }
 
 .auth-label-row {
@@ -150,6 +153,7 @@
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 10px;
+  height: 52px;
   min-height: 52px;
   padding: 0 14px;
   border: 1px solid #cbdad5;
