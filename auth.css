@@ -5,20 +5,25 @@
 }
 
 .auth-page {
-  min-height: 100vh;
+  position: relative;
+  min-height: 100dvh;
   background:
     radial-gradient(circle at 50% 0%, rgba(146, 200, 62, 0.08), transparent 26%),
     linear-gradient(180deg, #fbfdfc 0%, #f4f8f6 100%);
 }
 
 .auth-header {
-  position: relative;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
   width: min(100% - 48px, 860px);
-  min-height: 118px;
-  margin: 0 auto;
+  min-height: 88px;
+  margin: 0;
+  transform: translateX(-50%);
 }
 
 .auth-header .brand {
@@ -58,10 +63,13 @@
 
 .auth-main,
 .auth-main-register {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: min(100% - 48px, 620px);
+  min-height: 100dvh;
   margin: 0 auto;
-  padding: 4px 0 54px;
+  padding: 128px 0 40px;
 }
 
 .auth-main-register {
@@ -497,8 +505,9 @@
 
 @media (max-width: 720px) {
   .auth-header {
+    top: 10px;
     width: calc(100% - 28px);
-    min-height: 102px;
+    min-height: 80px;
   }
 
   .auth-header .brand-logo {
@@ -519,8 +528,9 @@
   .auth-main,
   .auth-main-register {
     width: calc(100% - 28px);
-    padding-top: 0;
-    padding-bottom: 34px;
+    min-height: 100dvh;
+    padding-top: 108px;
+    padding-bottom: 28px;
   }
 
   .auth-card,
@@ -547,6 +557,7 @@
   .auth-main,
   .auth-main-register {
     width: calc(100% - 20px);
+    padding-top: 102px;
   }
 
   .auth-card,
