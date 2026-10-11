@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="home-search.css" />
+  <link rel="stylesheet" href="home-carousel.css" />
   <link rel="stylesheet" href="home-layout.css" />
 </head>
 
@@ -101,9 +102,56 @@
     <section class="hero">
       <div class="hero-visual" id="heroVisual" aria-label="Destaque de condomínio e resultados da pesquisa">
         <img
+          id="heroCarouselImage"
           src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85"
-          alt="Área externa de um condomínio residencial"
+          alt="Área externa do Residencial Parque das Flores"
         />
+
+        <div class="visual-overlay"></div>
+
+        <a
+          class="rating-card carousel-rating-card"
+          id="heroCondoCard"
+          href="condominio.html"
+          aria-label="Abrir perfil do Residencial Parque das Flores"
+          aria-live="polite"
+        >
+          <div class="rating-card-top">
+            <span class="rating-badge" id="heroCondoScore">4,7</span>
+            <span class="rating-stars" id="heroCondoStars" aria-label="Avaliação de 4,7 de 5">★★★★★</span>
+          </div>
+
+          <strong id="heroCondoName">Residencial Parque das Flores</strong>
+          <p id="heroCondoReviews">Nota baseada em 184 avaliações de moradores.</p>
+
+          <div class="rating-meta" id="heroCondoMeta">
+            <span>Segurança bem avaliada</span>
+            <span>Boa administração</span>
+          </div>
+        </a>
+
+        <div class="verified-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 12 2 2 4-5" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+          </svg>
+          <span>
+            <strong>Avaliações verificadas</strong>
+            <small>Mais confiança na sua decisão</small>
+          </span>
+        </div>
+
+        <div class="carousel-controls" aria-label="Navegar entre condomínios em destaque">
+          <button class="carousel-arrow" id="carouselPrev" type="button" aria-label="Condomínio anterior">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+
+          <div class="carousel-dots" id="carouselDots" aria-label="Selecionar condomínio em destaque"></div>
+
+          <button class="carousel-arrow" id="carouselNext" type="button" aria-label="Próximo condomínio">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
 
         <section class="condo-browser" id="condoBrowser" aria-hidden="true" aria-label="Condomínios cadastrados">
           <div class="condo-browser-header">
