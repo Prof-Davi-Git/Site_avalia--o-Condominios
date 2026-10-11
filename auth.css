@@ -115,16 +115,11 @@
 }
 
 .auth-field {
-  display: grid;
-  grid-template-rows: 18px 52px;
-  grid-auto-rows: auto;
-  align-content: start;
-  row-gap: 8px;
-  min-width: 0;
-}
-
-.auth-form-grid > .auth-field {
+  display: flex;
+  flex-direction: column;
   align-self: start;
+  gap: 8px;
+  min-width: 0;
 }
 
 .auth-field label,
@@ -467,9 +462,17 @@
   line-height: 1.5;
 }
 
+.auth-password-grid {
+  align-items: start;
+}
+
 .password-strength {
   display: grid;
   gap: 6px;
+}
+
+.password-strength-full {
+  margin-top: -10px;
 }
 
 .password-strength-bar {
