@@ -1,32 +1,35 @@
 /*
-  Organização da página inicial da Casa Certa.
-  O painel do condomínio permanece preservado; os ajustes abaixo
-  atuam somente no posicionamento do conteúdo da coluna direita.
+  Página inicial da Casa Certa.
+  A primeira dobra prioriza somente três elementos:
+  imagem, mensagem principal e busca.
 */
 
 @media (min-width: 981px) {
   .hero {
-    grid-template-columns: minmax(520px, 1.12fr) minmax(440px, 0.88fr);
+    grid-template-columns: minmax(430px, 0.92fr) minmax(520px, 1.08fr);
     align-items: center;
-    gap: clamp(48px, 5vw, 88px);
+    gap: clamp(56px, 6vw, 96px);
+    padding: 24px 0 36px;
   }
 
   .hero-visual {
     grid-column: 1;
     grid-row: 1;
+    align-self: center;
+    height: min(66svh, 620px);
+    min-height: 500px;
   }
 
   .hero-content {
     grid-column: 2;
     grid-row: 1;
-    display: flex;
-    flex-direction: column;
+    align-self: center;
+    justify-self: start;
     width: 100%;
-    max-width: 650px;
-    min-height: min(68svh, 610px);
-    justify-self: end;
-    padding: 0 0 8px;
-    transform: translateY(-18px);
+    max-width: 690px;
+    min-height: 0;
+    padding: 0;
+    transform: none;
   }
 
   .hero-copy {
@@ -34,89 +37,90 @@
   }
 
   .hero-content .eyebrow {
-    margin: 0 0 12px;
+    margin: 0 0 14px;
   }
 
   .hero-content h1 {
-    max-width: 620px;
-    margin: 0 0 18px;
+    max-width: 680px;
+    margin: 0 0 22px;
   }
 
   .hero-content .hero-description {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0;
     line-height: 1.58;
   }
 
   .home-action-zone {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    margin-top: 38px;
+    margin-top: 34px;
   }
 
   .search-box {
-    width: calc(100% - 22px);
-    max-width: 610px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
 }
 
 @media (min-width: 981px) and (max-width: 1260px) {
   .hero {
-    grid-template-columns: minmax(430px, 1fr) minmax(400px, 0.92fr);
-    gap: 38px;
+    grid-template-columns: minmax(400px, 0.9fr) minmax(440px, 1.1fr);
+    gap: 46px;
   }
 
   .hero-content {
-    max-width: 570px;
-    transform: translateY(-14px);
+    max-width: 610px;
   }
 
   .hero-content h1 {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .home-action-zone {
-    margin-top: 32px;
-  }
-
-  .search-box {
-    width: calc(100% - 16px);
+    margin-top: 28px;
   }
 }
 
 @media (min-width: 981px) and (max-height: 850px) {
-  .hero-content {
-    min-height: min(64svh, 560px);
-    transform: translateY(-10px);
+  .hero {
+    padding-top: 14px;
+    padding-bottom: 22px;
+  }
+
+  .hero-visual {
+    height: calc(100svh - 108px);
+    min-height: 470px;
+    max-height: 570px;
   }
 
   .hero-content .eyebrow {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
   }
 
   .hero-content h1 {
-    margin-bottom: 13px;
+    margin-bottom: 15px;
   }
 
   .hero-content .hero-description {
-    line-height: 1.45;
+    line-height: 1.46;
   }
 
   .home-action-zone {
-    margin-top: 26px;
+    margin-top: 24px;
   }
 }
 
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr;
+    gap: 34px;
   }
 
   .hero-content {
     grid-column: 1;
     grid-row: 1;
+    width: 100%;
     max-width: none;
   }
 
@@ -126,7 +130,7 @@
   }
 
   .hero-content .eyebrow {
-    margin-bottom: 14px;
+    margin-bottom: 13px;
   }
 
   .hero-content h1 {
@@ -138,25 +142,25 @@
   }
 
   .home-action-zone {
-    margin-top: 30px;
+    margin-top: 28px;
   }
 
   .search-box {
-    width: calc(100% - 18px);
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
   }
 }
 
 @media (max-width: 640px) {
+  .hero {
+    gap: 28px;
+  }
+
   .hero-content h1 {
     margin-bottom: 16px;
   }
 
   .home-action-zone {
-    margin-top: 26px;
-  }
-
-  .search-box {
-    width: 100%;
+    margin-top: 24px;
   }
 }
