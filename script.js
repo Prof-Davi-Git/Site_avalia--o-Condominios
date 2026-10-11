@@ -8,6 +8,16 @@ const heroVisual = document.querySelector("#heroVisual");
 const condoBrowser = document.querySelector("#condoBrowser");
 const condoBrowserList = document.querySelector("#condoBrowserList");
 const searchActionLinks = document.querySelectorAll("[data-search-action='true']");
+const heroCarouselImage = document.querySelector("#heroCarouselImage");
+const heroCondoCard = document.querySelector("#heroCondoCard");
+const heroCondoScore = document.querySelector("#heroCondoScore");
+const heroCondoStars = document.querySelector("#heroCondoStars");
+const heroCondoName = document.querySelector("#heroCondoName");
+const heroCondoReviews = document.querySelector("#heroCondoReviews");
+const heroCondoMeta = document.querySelector("#heroCondoMeta");
+const carouselPrev = document.querySelector("#carouselPrev");
+const carouselNext = document.querySelector("#carouselNext");
+const carouselDots = document.querySelector("#carouselDots");
 
 const condominios = [
   {
@@ -17,12 +27,40 @@ const condominios = [
     avaliacoes: 184,
     url: "condominio.html",
     imagem:
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=85"
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85",
+    estrelas: "★★★★★",
+    destaques: ["Segurança bem avaliada", "Boa administração"]
+  },
+  {
+    nome: "Residencial Vista do Lago",
+    endereco: "Campinas - SP",
+    nota: "4,5",
+    avaliacoes: 127,
+    url: "condominio-vista-do-lago.html",
+    imagem:
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85",
+    estrelas: "★★★★★",
+    destaques: ["Boa área de lazer", "Localização tranquila"]
+  },
+  {
+    nome: "Condomínio Jardins do Bosque",
+    endereco: "Sorocaba - SP",
+    nota: "4,3",
+    avaliacoes: 96,
+    url: "condominio-jardins-do-bosque.html",
+    imagem:
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=85",
+    estrelas: "★★★★☆",
+    destaques: ["Áreas verdes", "Bom custo-benefício"]
   }
 ];
 
 let sharedToastTimer;
 let searchModeActive = false;
+let currentCarouselIndex = 0;
+let carouselTimer;
+let carouselTransitionTimer;
+const carouselInterval = 5500;
 
 function normalizeText(text) {
   return text
@@ -119,10 +157,111 @@ function renderCondoBrowser(query = "") {
     .join("");
 }
 
+function renderCarouselDots() {
+  if (!carouselDots) return;
+
+  carouselDots.innerHTML = condominios
+    .map((condominio, index) => {
+      const activeClass = index === currentCarouselIndex ? " is-active" : "";
+      const pressed = index === currentCarouselIndex ? "true" : "false";
+
+      return `
+        <button
+          class="carousel-dot${activeClass}"
+          type="button"
+          data-carousel-index="${index}"
+          aria-label="Exibir ${condominio.nome}"
+          aria-pressed="${pressed}"
+        ></button>
+      `;
+    })
+    .join("");
+}
+
+function updateCarouselContent(index, animate = true) {
+  if (!heroVisual || !heroCarouselImage || !heroCondoCard) return;
+
+  currentCarouselIndex =
+    (index + condominios.length) % condominios.length;
+
+  const condominio = condominios[currentCarouselIndex];
+
+  const applyContent = () => {
+    heroCarouselImage.src = condominio.imagem;
+    heroCarouselImage.alt = `Área externa de ${condominio.nome}`;
+
+    heroCondoCard.href = condominio.url;
+    heroCondoCard.setAttribute(
+      "aria-label",
+      `Abrir perfil de ${condominio.nome}`
+    );
+
+    if (heroCondoScore) heroCondoScore.textContent = condominio.nota;
+
+    if (heroCondoStars) {
+      heroCondoStars.textContent = condominio.estrelas;
+      heroCondoStars.setAttribute(
+        "aria-label",
+        `Avaliação de ${condominio.nota} de 5`
+      );
+    }
+
+    if (heroCondoName) heroCondoName.textContent = condominio.nome;
+
+    if (heroCondoReviews) {
+      heroCondoReviews.textContent =
+        `Nota baseada em ${condominio.avaliacoes} avaliações de moradores.`;
+    }
+
+    if (heroCondoMeta) {
+      heroCondoMeta.innerHTML = condominio.destaques
+        .map((destaque) => `<span>${destaque}</span>`)
+        .join("");
+    }
+
+    renderCarouselDots();
+
+    window.requestAnimationFrame(() => {
+      heroVisual.classList.remove("is-carousel-changing");
+    });
+  };
+
+  clearTimeout(carouselTransitionTimer);
+
+  if (!animate) {
+    applyContent();
+    return;
+  }
+
+  heroVisual.classList.add("is-carousel-changing");
+  carouselTransitionTimer = window.setTimeout(applyContent, 180);
+}
+
+function stopCarousel() {
+  clearInterval(carouselTimer);
+  carouselTimer = undefined;
+}
+
+function startCarousel() {
+  if (!heroVisual || searchModeActive || condominios.length < 2) return;
+
+  stopCarousel();
+
+  carouselTimer = window.setInterval(() => {
+    updateCarouselContent(currentCarouselIndex + 1);
+  }, carouselInterval);
+}
+
+function goToCarousel(index) {
+  updateCarouselContent(index);
+  startCarousel();
+}
+
 function activateSearchMode() {
   if (!heroVisual || !condoBrowser) return;
 
   searchModeActive = true;
+  stopCarousel();
   heroVisual.classList.add("is-search-mode");
   condoBrowser.setAttribute("aria-hidden", "false");
   renderCondoBrowser(searchInput?.value || "");
@@ -134,6 +273,7 @@ function deactivateSearchMode() {
   searchModeActive = false;
   heroVisual.classList.remove("is-search-mode");
   condoBrowser.setAttribute("aria-hidden", "true");
+  startCarousel();
 }
 
 function focusSearch() {
@@ -222,6 +362,35 @@ if (condoBrowserList) {
   });
 }
 
+carouselPrev?.addEventListener("click", (event) => {
+  event.preventDefault();
+  goToCarousel(currentCarouselIndex - 1);
+});
+
+carouselNext?.addEventListener("click", (event) => {
+  event.preventDefault();
+  goToCarousel(currentCarouselIndex + 1);
+});
+
+carouselDots?.addEventListener("click", (event) => {
+  const dot = event.target.closest("[data-carousel-index]");
+
+  if (!dot) return;
+
+  goToCarousel(Number(dot.dataset.carouselIndex));
+});
+
+if (heroVisual) {
+  heroVisual.addEventListener("mouseenter", stopCarousel);
+  heroVisual.addEventListener("mouseleave", startCarousel);
+  heroVisual.addEventListener("focusin", stopCarousel);
+  heroVisual.addEventListener("focusout", (event) => {
+    if (!heroVisual.contains(event.relatedTarget)) {
+      startCarousel();
+    }
+  });
+}
+
 if (searchForm && searchInput) {
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -284,3 +453,6 @@ window.addEventListener("resize", () => {
 });
 
 renderCondoBrowser();
+renderCarouselDots();
+updateCarouselContent(0, false);
+startCarousel();
