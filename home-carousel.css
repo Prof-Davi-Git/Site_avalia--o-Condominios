@@ -1,0 +1,113 @@
+.hero-visual {
+  --carousel-control-bg: rgba(255, 255, 255, 0.92);
+}
+
+#heroCarouselImage,
+.carousel-rating-card {
+  transition: opacity 220ms ease, transform 280ms ease;
+}
+
+.hero-visual.is-carousel-changing #heroCarouselImage,
+.hero-visual.is-carousel-changing .carousel-rating-card {
+  opacity: 0;
+  transform: scale(0.992);
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 14px;
+  background: rgba(8, 34, 29, 0.34);
+  backdrop-filter: blur(10px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+}
+
+.carousel-arrow {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: var(--carousel-control-bg);
+  color: var(--primary);
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  background: #fff;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.carousel-arrow svg {
+  width: 17px;
+  height: 17px;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  cursor: pointer;
+  transition: width 180ms ease, background-color 180ms ease;
+}
+
+.carousel-dot.is-active {
+  width: 20px;
+  background: #fff;
+}
+
+.carousel-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.hero-visual.is-search-mode .carousel-controls {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.985);
+}
+
+@media (max-width: 640px) {
+  .carousel-controls {
+    top: 16px;
+    right: 16px;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .carousel-dot.is-active {
+    width: 16px;
+  }
+}
