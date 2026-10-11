@@ -15,11 +15,12 @@ const galleryNext = document.querySelector("#galleryNext");
 const galleryTriggers = document.querySelectorAll("[data-gallery-index]");
 const openGalleryButton = document.querySelector("#openGalleryButton");
 
-const galleryImages = [
-  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=90",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=90",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=90"
-];
+const profileCondoName =
+  document.querySelector("#condominioTitle")?.textContent.trim() || "Condomínio";
+
+const galleryImages = [...document.querySelectorAll(".full-gallery img")]
+  .map((image) => image.src)
+  .filter(Boolean);
 
 let currentGalleryIndex = 0;
 let condoToastTimer;
@@ -48,8 +49,8 @@ if (saveCondoButton) {
 
     showCondoToast(
       isSaved
-        ? "Residencial Parque das Flores salvo na sua lista."
-        : "Residencial Parque das Flores removido da sua lista."
+        ? `${profileCondoName} salvo na sua lista.`
+        : `${profileCondoName} removido da sua lista.`
     );
   });
 }
