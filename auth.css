@@ -116,9 +116,15 @@
 
 .auth-field {
   display: grid;
+  grid-template-rows: 18px 52px;
+  grid-auto-rows: auto;
   align-content: start;
-  gap: 8px;
+  row-gap: 8px;
   min-width: 0;
+}
+
+.auth-form-grid > .auth-field {
+  align-self: start;
 }
 
 .auth-field label,
@@ -126,7 +132,7 @@
   color: var(--text);
   font-size: 13px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 18px;
 }
 
 .auth-label-row {
@@ -134,6 +140,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  min-height: 18px;
 }
 
 .auth-inline-link {
