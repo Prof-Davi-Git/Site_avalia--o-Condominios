@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Crie sua conta na Casa Certa para avaliar condomínios, salvar perfis e acessar recursos personalizados."
+  />
+  <title>Criar conta | Casa Certa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-page" data-auth-page="cadastro">
+  <header class="auth-header">
+    <a class="brand" href="index.html" aria-label="Página inicial da Casa Certa">
+      <img class="brand-logo" src="Imagens/casa-certa-logo.png" alt="Casa Certa" />
+    </a>
+
+    <a class="auth-back-link" href="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+      Voltar para o início
+    </a>
+  </header>
+
+  <main class="auth-main auth-main-register">
+    <section class="auth-card auth-card-register" aria-labelledby="registerTitle">
+      <div class="auth-card-header">
+        <span class="auth-kicker">Cadastro Casa Certa</span>
+        <h1 id="registerTitle">Crie sua conta</h1>
+        <p>
+          Escolha o tipo de acesso e preencha seus dados para começar a usar a plataforma.
+        </p>
+      </div>
+
+      <form class="auth-form" id="registerForm" novalidate>
+        <fieldset class="account-type-group">
+          <legend>Como você pretende usar a Casa Certa?</legend>
+
+          <div class="account-type-grid">
+            <label class="account-type-option">
+              <input
+                type="radio"
+                name="accountType"
+                value="morador"
+                checked
+              />
+              <span class="account-type-card">
+                <span class="account-type-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 20V9l8-6 8 6v11" />
+                    <path d="M9 20v-6h6v6" />
+                  </svg>
+                </span>
+                <span>
+                  <strong>Morador ou interessado</strong>
+                  <small>Avaliar, pesquisar, salvar e comparar condomínios.</small>
+                </span>
+              </span>
+            </label>
+
+            <label class="account-type-option">
+              <input
+                type="radio"
+                name="accountType"
+                value="representante"
+              />
+              <span class="account-type-card">
+                <span class="account-type-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 21V7h9v14" />
+                    <path d="M14 11h5v10" />
+                    <path d="M8 10h3" />
+                    <path d="M8 14h3" />
+                    <path d="M8 18h3" />
+                  </svg>
+                </span>
+                <span>
+                  <strong>Representante de condomínio</strong>
+                  <small>Solicitar gestão do perfil e responder avaliações.</small>
+                </span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="auth-form-grid">
+          <div class="auth-field">
+            <label for="registerName">Nome completo</label>
+            <div class="auth-input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="7" r="4" />
+                <path d="M4 21a8 8 0 0 1 16 0" />
+              </svg>
+              <input
+                id="registerName"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Seu nome completo"
+                minlength="3"
+                required
+              />
+            </div>
+            <small class="field-error" data-error-for="registerName"></small>
+          </div>
+
+          <div class="auth-field">
+            <label for="registerEmail">E-mail</label>
+            <div class="auth-input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v14H4z" />
+                <path d="m4 7 8 6 8-6" />
+              </svg>
+              <input
+                id="registerEmail"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="seuemail@exemplo.com"
+                required
+              />
+            </div>
+            <small class="field-error" data-error-for="registerEmail"></small>
+          </div>
+
+          <div class="auth-field">
+            <label for="registerPassword">Senha</label>
+            <div class="auth-input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="10" width="14" height="10" rx="2" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+              </svg>
+              <input
+                id="registerPassword"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Crie uma senha segura"
+                minlength="8"
+                required
+              />
+              <button
+                class="password-toggle"
+                type="button"
+                data-password-toggle="registerPassword"
+                aria-label="Mostrar senha"
+              >
+                <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6S2.5 12 2.5 12Z" />
+                  <circle cx="12" cy="12" r="2.5" />
+                </svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m3 3 18 18" />
+                  <path d="M10.6 6.2A9.7 9.7 0 0 1 12 6c6 0 9.5 6 9.5 6a14 14 0 0 1-2.1 2.8" />
+                  <path d="M6.6 6.6C4 8.4 2.5 12 2.5 12S6 18 12 18a9.6 9.6 0 0 0 3.3-.6" />
+                </svg>
+              </button>
+            </div>
+            <div class="password-strength" id="passwordStrength" aria-live="polite">
+              <span class="password-strength-bar"><span></span></span>
+              <small>Use pelo menos 8 caracteres, com letras e números.</small>
+            </div>
+            <small class="field-error" data-error-for="registerPassword"></small>
+          </div>
+
+          <div class="auth-field">
+            <label for="registerPasswordConfirm">Confirmar senha</label>
+            <div class="auth-input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="10" width="14" height="10" rx="2" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+              </svg>
+              <input
+                id="registerPasswordConfirm"
+                name="passwordConfirm"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Repita a senha"
+                minlength="8"
+                required
+              />
+              <button
+                class="password-toggle"
+                type="button"
+                data-password-toggle="registerPasswordConfirm"
+                aria-label="Mostrar senha"
+              >
+                <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6S2.5 12 2.5 12Z" />
+                  <circle cx="12" cy="12" r="2.5" />
+                </svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m3 3 18 18" />
+                  <path d="M10.6 6.2A9.7 9.7 0 0 1 12 6c6 0 9.5 6 9.5 6a14 14 0 0 1-2.1 2.8" />
+                  <path d="M6.6 6.6C4 8.4 2.5 12 2.5 12S6 18 12 18a9.6 9.6 0 0 0 3.3-.6" />
+                </svg>
+              </button>
+            </div>
+            <small class="field-error" data-error-for="registerPasswordConfirm"></small>
+          </div>
+        </div>
+
+        <div class="representative-fields" id="representativeFields" hidden>
+          <div class="representative-heading">
+            <span>Dados profissionais</span>
+            <p>
+              Essas informações serão usadas posteriormente no processo de verificação do vínculo com o condomínio.
+            </p>
+          </div>
+
+          <div class="auth-form-grid">
+            <div class="auth-field">
+              <label for="condoName">Nome do condomínio</label>
+              <div class="auth-input-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 21V7h9v14" />
+                  <path d="M14 11h5v10" />
+                </svg>
+                <input
+                  id="condoName"
+                  name="condoName"
+                  type="text"
+                  placeholder="Nome oficial do condomínio"
+                />
+              </div>
+              <small class="field-error" data-error-for="condoName"></small>
+            </div>
+
+            <div class="auth-field">
+              <label for="representativeRole">Função</label>
+              <div class="auth-input-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M4 21a8 8 0 0 1 16 0" />
+                </svg>
+                <input
+                  id="representativeRole"
+                  name="representativeRole"
+                  type="text"
+                  placeholder="Ex.: síndico, administradora"
+                />
+              </div>
+              <small class="field-error" data-error-for="representativeRole"></small>
+            </div>
+          </div>
+        </div>
+
+        <label class="auth-checkbox auth-checkbox-terms">
+          <input type="checkbox" id="acceptTerms" name="terms" required />
+          <span>
+            Li e concordo com os <a href="#">Termos de Uso</a> e com a
+            <a href="#">Política de Privacidade</a>.
+          </span>
+        </label>
+        <small class="field-error terms-error" data-error-for="acceptTerms"></small>
+
+        <button class="auth-submit" type="submit">Criar minha conta</button>
+
+        <div class="auth-status" id="registerStatus" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="auth-switch">
+        <span>Já possui uma conta?</span>
+        <a href="login.html">Entrar</a>
+      </div>
+    </section>
+
+    <aside class="auth-aside auth-aside-register" aria-label="Informações sobre o cadastro">
+      <div class="auth-aside-content">
+        <span class="auth-aside-kicker">Conta pessoal ou profissional</span>
+        <h2>Um acesso preparado para diferentes perfis.</h2>
+        <p>
+          Moradores e interessados podem avaliar e pesquisar. Representantes poderão solicitar a gestão oficial dos perfis de condomínio.
+        </p>
+
+        <div class="auth-benefits">
+          <div class="auth-benefit">
+            <span class="benefit-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 4 4L19 6" />
+              </svg>
+            </span>
+            <div>
+              <strong>Identidade protegida</strong>
+              <span>Dados pessoais não precisam aparecer publicamente nas avaliações.</span>
+            </div>
+          </div>
+
+          <div class="auth-benefit">
+            <span class="benefit-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+                <path d="m9 12 2 2 4-5" />
+              </svg>
+            </span>
+            <div>
+              <strong>Verificação por etapas</strong>
+              <span>Perfis profissionais poderão passar por validação antes de representar um condomínio.</span>
+            </div>
+          </div>
+
+          <div class="auth-benefit">
+            <span class="benefit-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v14H4z" />
+                <path d="M8 9h8" />
+                <path d="M8 13h5" />
+              </svg>
+            </span>
+            <div>
+              <strong>Histórico centralizado</strong>
+              <span>Seu uso da plataforma fica organizado em um único acesso.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>
