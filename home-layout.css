@@ -44,7 +44,7 @@
 
   .home-lower-group {
     width: 100%;
-    margin-top: clamp(84px, 9vh, 108px);
+    margin-top: 138px;
   }
 
   .hero-content .hero-description {
@@ -83,7 +83,7 @@
   }
 
   .home-lower-group {
-    margin-top: 76px;
+    margin-top: 122px;
   }
 
   .home-action-zone {
@@ -110,7 +110,7 @@
   }
 
   .home-lower-group {
-    margin-top: 68px;
+    margin-top: 138px;
   }
 
   .hero-content .hero-description {
