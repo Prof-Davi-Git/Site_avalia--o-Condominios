@@ -1,0 +1,823 @@
+body.account-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(146, 200, 62, 0.08), transparent 32%),
+    #f6f9f8;
+  color: var(--text);
+}
+
+.account-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 82px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.account-topbar .brand-logo {
+  height: 58px;
+  width: auto;
+}
+
+.account-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-topbar-link,
+.account-logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #fff;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.account-logout {
+  color: var(--primary);
+}
+
+.account-shell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 28px;
+  width: min(100% - 48px, 1440px);
+  margin: 28px auto 64px;
+}
+
+.account-sidebar {
+  position: sticky;
+  top: 108px;
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(16, 35, 63, 0.055);
+}
+
+.account-identity {
+  padding: 24px 22px 20px;
+  border-bottom: 1px solid #edf2ef;
+}
+
+.account-avatar {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.account-identity h1 {
+  margin: 14px 0 4px;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+}
+
+.account-identity p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.role-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.role-chip svg {
+  width: 13px;
+  height: 13px;
+}
+
+.account-nav {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+}
+
+.account-nav button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  text-align: left;
+  cursor: pointer;
+}
+
+.account-nav button svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.account-nav button:hover,
+.account-nav button.is-active {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.account-content {
+  min-width: 0;
+}
+
+.account-section {
+  display: none;
+}
+
+.account-section.is-active {
+  display: block;
+}
+
+.account-page-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.account-page-title h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -0.045em;
+}
+
+.account-page-title p {
+  max-width: 650px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.account-page-title-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.account-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.account-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.account-button-primary {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.account-button-danger {
+  color: #a14040;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.account-card {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(16, 35, 63, 0.045);
+}
+
+.span-12 { grid-column: span 12; }
+.span-8 { grid-column: span 8; }
+.span-7 { grid-column: span 7; }
+.span-6 { grid-column: span 6; }
+.span-5 { grid-column: span 5; }
+.span-4 { grid-column: span 4; }
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.card-heading h3 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.025em;
+}
+
+.card-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metric-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.metric-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.metric-card strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 27px;
+  letter-spacing: -0.05em;
+}
+
+.metric-card small {
+  display: block;
+  margin-top: 5px;
+  color: #80909d;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.account-list {
+  display: grid;
+  gap: 10px;
+}
+
+.saved-condo,
+.review-item,
+.management-item,
+.team-item {
+  padding: 15px;
+  border: 1px solid #e4ece9;
+  border-radius: 15px;
+  background: #fbfdfc;
+}
+
+.saved-condo {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.saved-condo img {
+  width: 92px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 11px;
+}
+
+.saved-condo strong,
+.review-item strong,
+.management-item strong,
+.team-item strong {
+  display: block;
+  font-size: 13px;
+}
+
+.saved-condo p,
+.review-item p,
+.management-item p,
+.team-item p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.inline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 8px;
+  color: #7a8794;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.score-pill,
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.status-pill.pending {
+  background: #fff4dd;
+  color: #986919;
+}
+
+.status-pill.neutral {
+  background: #eef2f4;
+  color: #617080;
+}
+
+.activity-list {
+  display: grid;
+  gap: 14px;
+}
+
+.activity-row {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 11px;
+}
+
+.activity-dot {
+  width: 9px;
+  height: 9px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.activity-row strong {
+  display: block;
+  font-size: 12px;
+}
+
+.activity-row p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.account-form {
+  display: grid;
+  gap: 15px;
+}
+
+.account-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.account-field {
+  display: grid;
+  gap: 7px;
+}
+
+.account-field label {
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.account-field input,
+.account-field textarea,
+.account-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #d6e1dd;
+  border-radius: 11px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.account-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.account-field input:focus,
+.account-field textarea:focus,
+.account-field select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(11, 107, 87, 0.08);
+}
+
+.account-field input:disabled,
+.account-field textarea:disabled,
+.account-field select:disabled {
+  background: #f5f8f7;
+  color: #73808b;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.review-item {
+  display: grid;
+  gap: 12px;
+}
+
+.review-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.review-stars {
+  color: #d89b12;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.inline-editor {
+  display: none;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.inline-editor.is-open {
+  display: grid;
+}
+
+.inline-editor textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 10px 12px;
+  border: 1px solid #d6e1dd;
+  border-radius: 11px;
+  font: inherit;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.preference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf1ef;
+}
+
+.preference-row:last-child {
+  border-bottom: 0;
+}
+
+.preference-row strong {
+  display: block;
+  font-size: 12px;
+}
+
+.preference-row p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.toggle {
+  position: relative;
+  flex: 0 0 auto;
+  width: 42px;
+  height: 24px;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+}
+
+.toggle span {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #cfd9d5;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.toggle span::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 160ms ease;
+}
+
+.toggle input:checked + span {
+  background: var(--primary);
+}
+
+.toggle input:checked + span::after {
+  transform: translateX(18px);
+}
+
+.condo-admin-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 18px;
+  align-items: center;
+}
+
+.condo-admin-hero h3 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.04em;
+}
+
+.condo-admin-hero p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.condo-admin-hero img {
+  width: 210px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.progress-row {
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.progress-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e9efed;
+}
+
+.progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--primary);
+}
+
+.photo-management-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.photo-management-item {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  border-radius: 13px;
+  background: #e6efeb;
+}
+
+.photo-management-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(16, 35, 63, 0.82);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.photo-upload {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  border: 1px dashed #aebfba;
+  border-radius: 13px;
+  background: #f7faf9;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.photo-upload input {
+  display: none;
+}
+
+.account-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  max-width: 360px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  background: #10233f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.account-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.demo-note {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px solid #dce6e2;
+  border-radius: 12px;
+  background: #f8fbfa;
+  color: #77848f;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .account-shell {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .span-8,
+  .span-7,
+  .span-6,
+  .span-5,
+  .span-4 {
+    grid-column: span 12;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .account-topbar {
+    min-height: 72px;
+    padding: 0 16px;
+  }
+
+  .account-topbar .brand-logo {
+    height: 50px;
+  }
+
+  .account-topbar-link {
+    display: none;
+  }
+
+  .account-shell {
+    grid-template-columns: 1fr;
+    width: min(100% - 28px, 100%);
+    margin-top: 18px;
+  }
+
+  .account-sidebar {
+    position: static;
+  }
+
+  .account-identity {
+    padding-bottom: 16px;
+  }
+
+  .account-nav {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .account-nav button {
+    flex: 0 0 auto;
+  }
+
+  .account-page-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .metric-grid,
+  .account-form-grid,
+  .photo-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .saved-condo {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .saved-condo img {
+    width: 72px;
+    height: 58px;
+  }
+
+  .saved-condo > .account-button {
+    grid-column: 1 / -1;
+  }
+
+  .condo-admin-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .condo-admin-hero img {
+    width: 100%;
+    height: 190px;
+  }
+}
