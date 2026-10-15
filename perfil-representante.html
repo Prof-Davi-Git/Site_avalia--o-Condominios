@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Perfil demonstrativo de representante de condomínio na Casa Certa." />
+  <title>Perfil do representante | Casa Certa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="perfil.css" />
+</head>
+<body class="account-page">
+  <header class="account-topbar">
+    <a class="brand" href="index.html" aria-label="Página inicial da Casa Certa">
+      <img class="brand-logo" src="Imagens/casa-certa-logo.png" alt="Casa Certa" />
+    </a>
+
+    <div class="account-topbar-actions">
+      <a class="account-topbar-link" href="condominio.html">Ver perfil público</a>
+      <a class="account-logout" href="login.html">Sair</a>
+    </div>
+  </header>
+
+  <main class="account-shell">
+    <aside class="account-sidebar">
+      <div class="account-identity">
+        <div class="account-avatar" aria-hidden="true">MF</div>
+        <h1>Mariana Ferreira</h1>
+        <p>mariana.ferreira@exemplo.com</p>
+        <span class="role-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 12 2 2 4-5" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+          </svg>
+          Representante verificado
+        </span>
+      </div>
+
+      <nav class="account-nav" aria-label="Área do representante">
+        <button class="is-active" type="button" data-account-tab="rep-visao" aria-selected="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM14 4h6v3h-6zM4 20h6v-3H4z" /></svg>
+          Visão geral
+        </button>
+        <button type="button" data-account-tab="rep-avaliacoes" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5Z" /></svg>
+          Avaliações
+        </button>
+        <button type="button" data-account-tab="rep-perfil" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V7h9v14" /><path d="M14 11h5v10" /><path d="M8 10h3M8 14h3M8 18h3" /></svg>
+          Perfil oficial
+        </button>
+        <button type="button" data-account-tab="rep-fotos" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m7 15 3-3 3 3 2-2 2 2" /><circle cx="15.5" cy="9.5" r="1.5" /></svg>
+          Fotos
+        </button>
+        <button type="button" data-account-tab="rep-equipe" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13 20a4 4 0 0 1 8 0" /></svg>
+          Equipe
+        </button>
+        <button type="button" data-account-tab="rep-conta" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+          Minha conta
+        </button>
+      </nav>
+    </aside>
+
+    <div class="account-content">
+      <section class="account-section is-active" id="rep-visao">
+        <div class="account-page-title">
+          <div>
+            <h2>Painel do condomínio</h2>
+            <p>Acompanhe a reputação pública e administre as informações oficiais do Residencial Parque das Flores.</p>
+          </div>
+          <div class="account-page-title-actions">
+            <a class="account-button" href="condominio.html">Ver perfil público</a>
+            <button class="account-button account-button-primary" type="button" data-open-section="rep-avaliacoes">Responder avaliações</button>
+          </div>
+        </div>
+
+        <article class="account-card">
+          <div class="condo-admin-hero">
+            <div>
+              <span class="role-chip">Perfil oficial verificado</span>
+              <h3>Residencial Parque das Flores</h3>
+              <p>Rua Vergueiro, 2450 - Vila Mariana, São Paulo - SP</p>
+              <div class="progress-row">
+                <div class="progress-row-top"><span>Completude do perfil oficial</span><strong>92%</strong></div>
+                <div class="progress-track"><span style="width:92%"></span></div>
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=700&q=85" alt="Residencial Parque das Flores" />
+          </div>
+        </article>
+
+        <div class="metric-grid" style="margin-top:16px;">
+          <article class="metric-card">
+            <span>Nota geral</span>
+            <strong>4,7</strong>
+            <small>Média de 184 avaliações.</small>
+          </article>
+          <article class="metric-card">
+            <span>Recomendação</span>
+            <strong>92%</strong>
+            <small>Moradores que recomendariam o local.</small>
+          </article>
+          <article class="metric-card">
+            <span>Sem resposta</span>
+            <strong>12</strong>
+            <small>Avaliações aguardando retorno oficial.</small>
+          </article>
+          <article class="metric-card">
+            <span>Taxa de resposta</span>
+            <strong>68%</strong>
+            <small>Relatos que já receberam retorno.</small>
+          </article>
+        </div>
+
+        <div class="account-grid" style="margin-top:16px;">
+          <article class="account-card span-7">
+            <div class="card-heading">
+              <div>
+                <h3>Avaliações que precisam de atenção</h3>
+                <p>Priorize relatos recentes ou com pontos de melhoria.</p>
+              </div>
+              <button class="account-button" type="button" data-open-section="rep-avaliacoes">Ver todas</button>
+            </div>
+
+            <div class="account-list">
+              <div class="management-item">
+                <div class="review-item-top">
+                  <div>
+                    <strong>Manutenção dos elevadores demorou</strong>
+                    <div class="inline-meta"><span class="review-stars">★★★★☆</span><span>4,0</span><span>há 2 dias</span></div>
+                  </div>
+                  <span class="status-pill pending">Sem resposta</span>
+                </div>
+                <p>Boa estrutura, mas tivemos demora em uma manutenção recente e pouca atualização durante o processo.</p>
+              </div>
+
+              <div class="management-item">
+                <div class="review-item-top">
+                  <div>
+                    <strong>Barulho na área de lazer</strong>
+                    <div class="inline-meta"><span class="review-stars">★★★★☆</span><span>4,1</span><span>há 5 dias</span></div>
+                  </div>
+                  <span class="status-pill pending">Sem resposta</span>
+                </div>
+                <p>O condomínio é bom, mas o barulho nos finais de semana poderia ser melhor controlado.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="account-card span-5">
+            <div class="card-heading">
+              <div>
+                <h3>Resumo da reputação</h3>
+                <p>Principais temas encontrados nas avaliações recentes.</p>
+              </div>
+            </div>
+
+            <div class="activity-list">
+              <div class="activity-row">
+                <span class="activity-dot"></span>
+                <div>
+                  <strong>Segurança continua como maior destaque</strong>
+                  <p>Nota média 4,8 nas avaliações por categoria.</p>
+                </div>
+              </div>
+              <div class="activity-row">
+                <span class="activity-dot"></span>
+                <div>
+                  <strong>Administração permanece bem avaliada</strong>
+                  <p>Nota média 4,6 no perfil público.</p>
+                </div>
+              </div>
+              <div class="activity-row">
+                <span class="activity-dot"></span>
+                <div>
+                  <strong>Barulho merece acompanhamento</strong>
+                  <p>É o tema mais recorrente entre os pontos de atenção.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="demo-note">Perfil fictício criado apenas para demonstrar a área de gestão do representante. As alterações desta página não são gravadas em banco de dados.</p>
+      </section>
+
+      <section class="account-section" id="rep-avaliacoes">
+        <div class="account-page-title">
+          <div>
+            <h2>Avaliações dos moradores</h2>
+            <p>Leia os relatos publicados e responda oficialmente em nome do condomínio.</p>
+          </div>
+        </div>
+
+        <div class="account-list">
+          <article class="management-item">
+            <div class="review-item-top">
+              <div>
+                <strong>Manutenção dos elevadores demorou</strong>
+                <div class="inline-meta"><span class="review-stars">★★★★☆</span><span>4,0</span><span>Morador verificado</span><span>12 out. 2026</span></div>
+              </div>
+              <span class="status-pill pending" data-response-status>Sem resposta</span>
+            </div>
+            <p>Boa estrutura, mas tivemos demora em uma manutenção recente e pouca atualização durante o processo.</p>
+            <div class="review-actions">
+              <button class="account-button account-button-primary" type="button" data-reply-review>Responder</button>
+            </div>
+            <div class="inline-editor">
+              <textarea placeholder="Escreva a resposta oficial do condomínio..."></textarea>
+              <div class="form-actions">
+                <button class="account-button account-button-primary" type="button" data-send-reply>Publicar resposta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="management-item">
+            <div class="review-item-top">
+              <div>
+                <strong>Barulho na área de lazer</strong>
+                <div class="inline-meta"><span class="review-stars">★★★★☆</span><span>4,1</span><span>Morador verificado</span><span>09 out. 2026</span></div>
+              </div>
+              <span class="status-pill pending" data-response-status>Sem resposta</span>
+            </div>
+            <p>O condomínio é bom, mas o barulho nos finais de semana poderia ser melhor controlado.</p>
+            <div class="review-actions">
+              <button class="account-button account-button-primary" type="button" data-reply-review>Responder</button>
+            </div>
+            <div class="inline-editor">
+              <textarea placeholder="Escreva a resposta oficial do condomínio..."></textarea>
+              <div class="form-actions">
+                <button class="account-button account-button-primary" type="button" data-send-reply>Publicar resposta</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="management-item">
+            <div class="review-item-top">
+              <div>
+                <strong>Segurança é o principal ponto forte</strong>
+                <div class="inline-meta"><span class="review-stars">★★★★★</span><span>4,8</span><span>Morador verificado</span><span>02 out. 2026</span></div>
+              </div>
+              <span class="status-pill" data-response-status>Respondida</span>
+            </div>
+            <p>O controle de acesso funciona bem e a equipe da portaria é atenciosa. Me sinto seguro morando aqui.</p>
+            <div class="demo-note" style="margin-top:0;">
+              <strong>Resposta oficial publicada:</strong><br />
+              Agradecemos o relato. A equipe de portaria passa por reciclagens periódicas e ficamos felizes que o trabalho esteja sendo percebido.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="account-section" id="rep-perfil">
+        <div class="account-page-title">
+          <div>
+            <h2>Perfil oficial</h2>
+            <p>Informações institucionais exibidas para quem consulta o condomínio na Casa Certa.</p>
+          </div>
+          <button class="account-button" type="button" data-edit-form="#officialProfileForm" data-editing="false">Editar dados</button>
+        </div>
+
+        <article class="account-card">
+          <form class="account-form" id="officialProfileForm" onsubmit="return false;">
+            <div class="account-form-grid">
+              <div class="account-field">
+                <label for="officialName">Nome do condomínio</label>
+                <input id="officialName" type="text" value="Residencial Parque das Flores" disabled />
+              </div>
+              <div class="account-field">
+                <label for="officialCategory">Tipo de empreendimento</label>
+                <select id="officialCategory" disabled>
+                  <option selected>Residencial</option>
+                  <option>Residencial e comercial</option>
+                </select>
+              </div>
+              <div class="account-field">
+                <label for="officialAddress">Endereço</label>
+                <input id="officialAddress" type="text" value="Rua Vergueiro, 2450 - Vila Mariana, São Paulo - SP" disabled />
+              </div>
+              <div class="account-field">
+                <label for="officialPhone">Telefone da administração</label>
+                <input id="officialPhone" type="tel" value="(11) 3333-2450" disabled />
+              </div>
+              <div class="account-field">
+                <label for="officialEmail">E-mail institucional</label>
+                <input id="officialEmail" type="email" value="administracao@parquedasflores.exemplo" disabled />
+              </div>
+              <div class="account-field">
+                <label for="officialUnits">Quantidade de unidades</label>
+                <input id="officialUnits" type="number" value="320" disabled />
+              </div>
+            </div>
+
+            <div class="account-field">
+              <label for="officialDescription">Descrição oficial</label>
+              <textarea id="officialDescription" disabled>Condomínio residencial com quatro torres, portaria 24 horas e áreas de lazer para diferentes faixas etárias.</textarea>
+            </div>
+
+            <div class="account-field">
+              <label for="officialAmenities">Comodidades</label>
+              <textarea id="officialAmenities" disabled>Academia, piscina, salão de festas, playground, quadra esportiva, churrasqueira, bicicletário, espaço para animais e controle de acesso.</textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="account-button account-button-primary" type="button" data-save-form hidden>Salvar alterações</button>
+            </div>
+          </form>
+        </article>
+      </section>
+
+      <section class="account-section" id="rep-fotos">
+        <div class="account-page-title">
+          <div>
+            <h2>Fotos do condomínio</h2>
+            <p>Gerencie as imagens oficiais exibidas no perfil público.</p>
+          </div>
+        </div>
+
+        <article class="account-card">
+          <div class="photo-management-grid" id="profilePhotoGrid">
+            <div class="photo-management-item">
+              <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=700&q=85" alt="Fachada residencial" />
+              <button class="photo-remove" type="button" data-photo-remove>Remover</button>
+            </div>
+            <div class="photo-management-item">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=85" alt="Área comum" />
+              <button class="photo-remove" type="button" data-photo-remove>Remover</button>
+            </div>
+            <div class="photo-management-item">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=85" alt="Área externa" />
+              <button class="photo-remove" type="button" data-photo-remove>Remover</button>
+            </div>
+            <label class="photo-upload">
+              Adicionar foto
+              <input id="profilePhotoUpload" type="file" accept="image/*" />
+            </label>
+          </div>
+          <p class="demo-note">Nesta demonstração, a imagem selecionada aparece apenas na tela atual. O upload definitivo dependerá do backend e do armazenamento de arquivos.</p>
+        </article>
+      </section>
+
+      <section class="account-section" id="rep-equipe">
+        <div class="account-page-title">
+          <div>
+            <h2>Equipe e acessos</h2>
+            <p>Controle quem poderá auxiliar na gestão do perfil oficial do condomínio.</p>
+          </div>
+        </div>
+
+        <div class="account-grid">
+          <article class="account-card span-7">
+            <div class="card-heading">
+              <div>
+                <h3>Pessoas com acesso</h3>
+                <p>Perfis autorizados a visualizar ou responder pela administração.</p>
+              </div>
+            </div>
+
+            <div class="account-list" id="teamList">
+              <div class="team-item">
+                <strong>Mariana Ferreira</strong>
+                <p>Síndica · acesso principal</p>
+                <span class="status-pill">Administrador</span>
+              </div>
+              <div class="team-item">
+                <strong>Carlos Nunes</strong>
+                <p>Administradora parceira · pode responder avaliações</p>
+                <span class="status-pill neutral">Colaborador</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="account-card span-5">
+            <div class="card-heading">
+              <div>
+                <h3>Convidar integrante</h3>
+                <p>Envie um convite para outra pessoa da administração.</p>
+              </div>
+            </div>
+
+            <form class="account-form" id="inviteTeamForm">
+              <div class="account-field">
+                <label for="teamEmail">E-mail</label>
+                <input id="teamEmail" type="email" placeholder="nome@administradora.com" required />
+              </div>
+              <button class="account-button account-button-primary" type="submit">Enviar convite</button>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <section class="account-section" id="rep-conta">
+        <div class="account-page-title">
+          <div>
+            <h2>Minha conta</h2>
+            <p>Dados pessoais do representante responsável pela gestão deste perfil.</p>
+          </div>
+          <button class="account-button" type="button" data-edit-form="#representativeAccountForm" data-editing="false">Editar dados</button>
+        </div>
+
+        <article class="account-card">
+          <form class="account-form" id="representativeAccountForm" onsubmit="return false;">
+            <div class="account-form-grid">
+              <div class="account-field">
+                <label for="repName">Nome completo</label>
+                <input id="repName" type="text" value="Mariana Ferreira" disabled />
+              </div>
+              <div class="account-field">
+                <label for="repEmail">E-mail</label>
+                <input id="repEmail" type="email" value="mariana.ferreira@exemplo.com" disabled />
+              </div>
+              <div class="account-field">
+                <label for="repPhone">Telefone</label>
+                <input id="repPhone" type="tel" value="(11) 97777-2450" disabled />
+              </div>
+              <div class="account-field">
+                <label for="repRole">Função</label>
+                <input id="repRole" type="text" value="Síndica" disabled />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="account-button account-button-primary" type="button" data-save-form hidden>Salvar alterações</button>
+              <button class="account-button" type="button" data-demo-action="A troca de senha será conectada ao backend futuramente.">Alterar senha</button>
+            </div>
+          </form>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <div class="account-toast" id="accountToast" role="status" aria-live="polite"></div>
+  <script src="perfil.js"></script>
+</body>
+</html>
