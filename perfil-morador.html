@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Perfil demonstrativo de morador na Casa Certa." />
+  <title>Perfil do morador | Casa Certa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="perfil.css" />
+</head>
+<body class="account-page">
+  <header class="account-topbar">
+    <a class="brand" href="index.html" aria-label="Página inicial da Casa Certa">
+      <img class="brand-logo" src="Imagens/casa-certa-logo.png" alt="Casa Certa" />
+    </a>
+
+    <div class="account-topbar-actions">
+      <a class="account-topbar-link" href="index.html">Voltar ao site</a>
+      <a class="account-logout" href="login.html">Sair</a>
+    </div>
+  </header>
+
+  <main class="account-shell">
+    <aside class="account-sidebar">
+      <div class="account-identity">
+        <div class="account-avatar" aria-hidden="true">LM</div>
+        <h1>Lucas Martins</h1>
+        <p>lucas.martins@exemplo.com</p>
+        <span class="role-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 20V9l8-6 8 6v11" />
+            <path d="M9 20v-6h6v6" />
+          </svg>
+          Morador
+        </span>
+      </div>
+
+      <nav class="account-nav" aria-label="Área do morador">
+        <button class="is-active" type="button" data-account-tab="morador-visao" aria-selected="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM14 4h6v3h-6zM4 20h6v-3H4z" /></svg>
+          Visão geral
+        </button>
+        <button type="button" data-account-tab="morador-dados" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+          Meus dados
+        </button>
+        <button type="button" data-account-tab="morador-salvos" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z" /></svg>
+          Condomínios salvos
+        </button>
+        <button type="button" data-account-tab="morador-avaliacoes" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.2 6.4 20.2 7.5 14 3 9.6l6.2-.9L12 3Z" /></svg>
+          Minhas avaliações
+        </button>
+        <button type="button" data-account-tab="morador-preferencias" aria-selected="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z" /></svg>
+          Preferências
+        </button>
+      </nav>
+    </aside>
+
+    <div class="account-content">
+      <section class="account-section is-active" id="morador-visao">
+        <div class="account-page-title">
+          <div>
+            <h2>Olá, Lucas</h2>
+            <p>Acompanhe seus condomínios salvos, avaliações e atividade dentro da Casa Certa.</p>
+          </div>
+          <div class="account-page-title-actions">
+            <a class="account-button account-button-primary" href="index.html#searchForm">Buscar condomínio</a>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span>Condomínios salvos</span>
+            <strong>2</strong>
+            <small>Perfis que você acompanha.</small>
+          </article>
+          <article class="metric-card">
+            <span>Avaliações publicadas</span>
+            <strong>2</strong>
+            <small>Relatos enviados para a comunidade.</small>
+          </article>
+          <article class="metric-card">
+            <span>Votos de utilidade</span>
+            <strong>27</strong>
+            <small>Pessoas que acharam seus relatos úteis.</small>
+          </article>
+          <article class="metric-card">
+            <span>Perfil</span>
+            <strong>80%</strong>
+            <small>Complete seus dados para personalizar a conta.</small>
+          </article>
+        </div>
+
+        <div class="account-grid" style="margin-top:16px;">
+          <article class="account-card span-7">
+            <div class="card-heading">
+              <div>
+                <h3>Condomínios salvos</h3>
+                <p>Acesso rápido aos perfis que você está acompanhando.</p>
+              </div>
+              <button class="account-button" type="button" data-open-section="morador-salvos">Ver todos</button>
+            </div>
+
+            <div class="account-list">
+              <div class="saved-condo">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=500&q=80" alt="Residencial Vista do Lago" />
+                <div>
+                  <strong>Residencial Vista do Lago</strong>
+                  <p>Campinas - SP</p>
+                  <div class="inline-meta"><span class="score-pill">4,5 / 5</span><span>127 avaliações</span></div>
+                </div>
+                <a class="account-button" href="condominio-vista-do-lago.html">Abrir perfil</a>
+              </div>
+
+              <div class="saved-condo">
+                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=500&q=80" alt="Condomínio Jardins do Bosque" />
+                <div>
+                  <strong>Condomínio Jardins do Bosque</strong>
+                  <p>Sorocaba - SP</p>
+                  <div class="inline-meta"><span class="score-pill">4,3 / 5</span><span>96 avaliações</span></div>
+                </div>
+                <a class="account-button" href="condominio-jardins-do-bosque.html">Abrir perfil</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="account-card span-5">
+            <div class="card-heading">
+              <div>
+                <h3>Atividade recente</h3>
+                <p>Resumo do que aconteceu na sua conta.</p>
+              </div>
+            </div>
+
+            <div class="activity-list">
+              <div class="activity-row">
+                <span class="activity-dot"></span>
+                <div>
+                  <strong>Sua avaliação recebeu 6 votos úteis</strong>
+                  <p>Residencial Vista do Lago · há 2 dias</p>
+                </div>
+              </div>
+              <div class="activity-row">
+                <span class="activity-dot"></span>
+                <div>
+                  <strong>Você salvou Jardins do Bosque</strong>
+                  <p>Perfil adicionado à sua lista · há 5 dias</p>
+                </div>
+              </div>
+              <div class="activity-row">
+                <span class="activity-dot"></span>
+                <div>
+                  <strong>A administração respondeu uma avaliação</strong>
+                  <p>Residencial Parque das Flores · há 1 semana</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="demo-note">Perfil fictício criado apenas para demonstrar como funcionará a área de um morador. As alterações desta página não são gravadas em banco de dados.</p>
+      </section>
+
+      <section class="account-section" id="morador-dados">
+        <div class="account-page-title">
+          <div>
+            <h2>Meus dados</h2>
+            <p>Informações pessoais e de contato vinculadas à sua conta.</p>
+          </div>
+          <button class="account-button" type="button" data-edit-form="#residentProfileForm" data-editing="false">Editar dados</button>
+        </div>
+
+        <article class="account-card">
+          <form class="account-form" id="residentProfileForm" onsubmit="return false;">
+            <div class="account-form-grid">
+              <div class="account-field">
+                <label for="residentName">Nome completo</label>
+                <input id="residentName" type="text" value="Lucas Martins" disabled />
+              </div>
+              <div class="account-field">
+                <label for="residentEmail">E-mail</label>
+                <input id="residentEmail" type="email" value="lucas.martins@exemplo.com" disabled />
+              </div>
+              <div class="account-field">
+                <label for="residentPhone">Telefone</label>
+                <input id="residentPhone" type="tel" value="(11) 98888-2450" disabled />
+              </div>
+              <div class="account-field">
+                <label for="residentCity">Cidade</label>
+                <input id="residentCity" type="text" value="São Paulo - SP" disabled />
+              </div>
+            </div>
+
+            <div class="account-field">
+              <label for="residentAbout">Sobre mim</label>
+              <textarea id="residentAbout" disabled>Busco informações sobre condomínios antes de decidir uma futura mudança e compartilho experiências dos locais onde já morei.</textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="account-button account-button-primary" type="button" data-save-form hidden>Salvar alterações</button>
+              <button class="account-button" type="button" data-demo-action="A troca de senha será conectada ao backend futuramente.">Alterar senha</button>
+            </div>
+          </form>
+        </article>
+      </section>
+
+      <section class="account-section" id="morador-salvos">
+        <div class="account-page-title">
+          <div>
+            <h2>Condomínios salvos</h2>
+            <p>Perfis que você marcou para consultar novamente ou acompanhar.</p>
+          </div>
+          <a class="account-button account-button-primary" href="index.html#searchForm">Adicionar condomínio</a>
+        </div>
+
+        <article class="account-card">
+          <div class="account-list">
+            <div class="saved-condo">
+              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=500&q=80" alt="Residencial Vista do Lago" />
+              <div>
+                <strong>Residencial Vista do Lago</strong>
+                <p>Rua Barreto Leme, 1466 - Cambuí, Campinas - SP</p>
+                <div class="inline-meta"><span class="score-pill">4,5 / 5</span><span>127 avaliações</span></div>
+              </div>
+              <div class="review-actions">
+                <a class="account-button" href="condominio-vista-do-lago.html">Abrir</a>
+                <button class="account-button account-button-danger" type="button" data-remove-saved>Remover</button>
+              </div>
+            </div>
+
+            <div class="saved-condo">
+              <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=500&q=80" alt="Condomínio Jardins do Bosque" />
+              <div>
+                <strong>Condomínio Jardins do Bosque</strong>
+                <p>Avenida Barão de Tatuí, 1180 - Jardim Vergueiro, Sorocaba - SP</p>
+                <div class="inline-meta"><span class="score-pill">4,3 / 5</span><span>96 avaliações</span></div>
+              </div>
+              <div class="review-actions">
+                <a class="account-button" href="condominio-jardins-do-bosque.html">Abrir</a>
+                <button class="account-button account-button-danger" type="button" data-remove-saved>Remover</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="account-section" id="morador-avaliacoes">
+        <div class="account-page-title">
+          <div>
+            <h2>Minhas avaliações</h2>
+            <p>Relatos publicados por você. Aqui será possível editar ou excluir o próprio conteúdo.</p>
+          </div>
+        </div>
+
+        <div class="account-list">
+          <article class="review-item">
+            <div class="review-item-top">
+              <div>
+                <strong>Residencial Vista do Lago</strong>
+                <div class="inline-meta"><span class="review-stars">★★★★★</span><span>4,8</span><span>Publicado em 03 out. 2026</span></div>
+              </div>
+              <span class="status-pill">Publicada</span>
+            </div>
+            <p data-review-text>Gostei bastante da tranquilidade e da área de lazer. A piscina é muito boa e o condomínio parece bem cuidado.</p>
+            <div class="review-actions">
+              <button class="account-button" type="button" data-edit-review>Editar</button>
+              <button class="account-button account-button-danger" type="button" data-delete-review>Excluir</button>
+            </div>
+            <div class="inline-editor">
+              <textarea>Gostei bastante da tranquilidade e da área de lazer. A piscina é muito boa e o condomínio parece bem cuidado.</textarea>
+              <div class="form-actions">
+                <button class="account-button account-button-primary" type="button" data-save-review>Salvar edição</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-item">
+            <div class="review-item-top">
+              <div>
+                <strong>Residencial Parque das Flores</strong>
+                <div class="inline-meta"><span class="review-stars">★★★★☆</span><span>4,2</span><span>Publicado em 19 set. 2026</span></div>
+              </div>
+              <span class="status-pill">Publicada</span>
+            </div>
+            <p data-review-text>Boa estrutura e segurança. Em horários de maior movimento alguns elevadores ficam cheios, mas a experiência geral é positiva.</p>
+            <div class="review-actions">
+              <button class="account-button" type="button" data-edit-review>Editar</button>
+              <button class="account-button account-button-danger" type="button" data-delete-review>Excluir</button>
+            </div>
+            <div class="inline-editor">
+              <textarea>Boa estrutura e segurança. Em horários de maior movimento alguns elevadores ficam cheios, mas a experiência geral é positiva.</textarea>
+              <div class="form-actions">
+                <button class="account-button account-button-primary" type="button" data-save-review>Salvar edição</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="account-section" id="morador-preferencias">
+        <div class="account-page-title">
+          <div>
+            <h2>Preferências</h2>
+            <p>Controle quais avisos e atualizações deseja receber.</p>
+          </div>
+        </div>
+
+        <article class="account-card">
+          <div class="preference-row">
+            <div>
+              <strong>Novas avaliações nos condomínios salvos</strong>
+              <p>Receber um aviso quando surgirem novos relatos em perfis acompanhados.</p>
+            </div>
+            <label class="toggle"><input type="checkbox" checked /><span></span></label>
+          </div>
+
+          <div class="preference-row">
+            <div>
+              <strong>Respostas às minhas avaliações</strong>
+              <p>Avisar quando um representante oficial responder um relato publicado por você.</p>
+            </div>
+            <label class="toggle"><input type="checkbox" checked /><span></span></label>
+          </div>
+
+          <div class="preference-row">
+            <div>
+              <strong>Novidades da plataforma</strong>
+              <p>Receber comunicações sobre novos recursos da Casa Certa.</p>
+            </div>
+            <label class="toggle"><input type="checkbox" /><span></span></label>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <div class="account-toast" id="accountToast" role="status" aria-live="polite"></div>
+  <script src="perfil.js"></script>
+</body>
+</html>
